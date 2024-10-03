@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: jwt
+  application:
+    name: copytrello
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/copytrello_db
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-IDENTITY: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: users
+    show-sql: true
+  flyway:
+    schemas: users
+server:
+  port: 8300
+  servlet:
+    context-path: /copytrello
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+
+
