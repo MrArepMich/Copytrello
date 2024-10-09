@@ -37,6 +37,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers("/api/v1/auth/**").permitAll()
+                        .requestMatchers("/api/v1/tasks/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
                 )
                 .csrf(CsrfConfigurer::disable)
                 .cors(CorsConfigurer::disable)
