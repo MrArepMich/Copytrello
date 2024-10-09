@@ -1,10 +1,12 @@
 package com.repinsky.task_tracker_backend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -30,6 +32,10 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
     private Collection<Role> roles = new ArrayList<>();
+
+    @OneToMany(mappedBy = "owner", cascade = {CascadeType.ALL})
+    @JsonIgnore
+    private List<Task> tasks;
 
     @Override
     public String toString() {
