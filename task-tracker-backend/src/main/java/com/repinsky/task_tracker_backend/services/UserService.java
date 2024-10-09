@@ -7,6 +7,9 @@ import com.repinsky.task_tracker_backend.models.User;
 import com.repinsky.task_tracker_backend.repositories.UserRepository;
 import com.repinsky.task_tracker_backend.utils.InputValidationUtil;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -22,11 +25,6 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
     private final RoleService roleService;
     private final InputValidationUtil validationService = new InputValidationUtil();
-
-    public User findByUserEmail(String username) {
-        return userRepository.findByEmail(username).orElseThrow(() ->
-                new ResourceNotFoundException("User not found"));
-    }
 
     public void createNewUser(RegisterUserDto registerUserDto) throws InputDataException {
         if (registerUserDto.getPassword() == null) {
@@ -78,4 +76,13 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
 
+    public String getCurrentUserEmail() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if (authentication != null && authentication.getPrincipal() instanceof UserDetails userDetails) {
+            return userDetails.getUsername();
+        }
+
+        return null;
+    }
 }
