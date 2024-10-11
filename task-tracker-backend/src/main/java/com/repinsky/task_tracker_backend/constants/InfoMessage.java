@@ -3,6 +3,9 @@ package com.repinsky.task_tracker_backend.constants;
 public enum InfoMessage {
     RESOURCE_NOT_FOUND_CODE("RESOURCE_NOT_FOUND"),
     INCORRECT_LOGIN_OR_PASSWORD("INCORRECT_LOGIN_OR_PASSWORD"),
+    USER_NOT_FOUND_CODE("USER_NOT_FOUND"),
+    TASK_NOT_FOUND_CODE("TASK_NOT_FOUND"),
+    BAD_REQUEST_ERROR_CODE("BAD_REQUEST_ERROR"),
 
     INVALID_EMAIL_OR_PASSWORD("Invalid email or password"),
     PASSWORD_CANNOT_BE_EMPTY("Password cannot be empty"),
