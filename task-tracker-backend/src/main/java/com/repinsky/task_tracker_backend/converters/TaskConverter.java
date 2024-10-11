@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 public class TaskConverter {
     public TaskDto entityToDto(Task task) {
         return new TaskDto(
+                task.getId(),
                 task.getTitle(),
                 task.getDescription(),
-                task.getOwner().getEmail(),
                 task.getStatus(),
                 task.getCompletedAt()
         );
