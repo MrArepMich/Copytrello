@@ -1,0 +1,122 @@
+version: '3.8'
+services:
+  postgresql:
+    image: postgres:13.16-bookworm
+    container_name: copytrello-postgres-container
+    ports:
+      - '5431:5432'
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - postgres_db:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${copytrello}" ]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+    networks:
+      - copytrello
+
+  zookeeper:
+    image: bitnami/zookeeper:latest
+    container_name: copytrello-zookeeper-container
+    restart: on-failure
+    ports:
+      - '2181:2181'
+    environment:
+      ZOO_PORT: 2181
+      ALLOW_ANONYMOUS_LOGIN: "yes"
+    networks:
+      - copytrello
+
+  kafka:
+    image: bitnami/kafka:latest
+    container_name: copytrello-kafka-container
+    restart: on-failure
+    depends_on:
+      - zookeeper
+    ports:
+      - '9092:9092'
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:29092,EXTERNAL://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENERS: INTERNAL://:29092,EXTERNAL://:9092
+      KAFKA_TOPIC: EMAIL_SENDING_TASKS
+      ALLOW_PLAINTEXT_LISTENER: yes
+    networks:
+      - copytrello
+
+  backend:
+    restart: unless-stopped
+    build:
+      context: task-tracker-backend
+      dockerfile: ../task-tracker-backend/Dockerfile
+    container_name: copytrello-task-tracker-backend
+    depends_on:
+      - postgresql
+      - kafka
+    ports:
+      - '8300:8300'
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgresql:5432/copytrello_db
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      JWT_KEY: ${JWT_SECRET_KEY}
+    networks:
+      - copytrello
+
+  scheduler:
+    restart: unless-stopped
+    build:
+      context: task-tracker-scheduler
+      dockerfile: ../task-tracker-scheduler/Dockerfile
+    container_name: copytrello-task-tracker-scheduler
+    depends_on:
+      - backend
+    ports:
+      - "8880:8880"
+      - "5005:5005"
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgresql:5432/copytrello_db
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      JAVA_TOOL_OPTIONS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
+    networks:
+      - copytrello
+
+  email-sender:
+    restart: unless-stopped
+    build:
+      context: task-tracker-email-sender
+      dockerfile: ../task-tracker-email-sender/Dockerfile
+    container_name: copytrello-task-tracker-mail-sender
+    depends_on:
+      - kafka
+    ports:
+      - "8000:8000"
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      SPRING_MAIL_USERNAME: ${MAILJET_API_KEY}
+      SPRING_MAIL_PASSWORD: ${MAILJET_SECRET_KEY}
+      SPRING_MAIL_HOST: smtp.mailjet.com
+      SPRING_MAIL_PORT: 587
+      SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH: "true"
+      SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS: "true"
+    networks:
+      - copytrello
+
+volumes:
+  postgres_db:
+    external: true
+
+networks:
+  copytrello:
+    driver: bridge
+
