@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
-@Table(name = "roles")
+@Table(schema = "users", name = "roles")
 @Getter
 @Setter
 @AllArgsConstructor

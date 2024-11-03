@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Entity
-@Table(name = "users")
+@Table(schema = "users", name = "users")
 @Setter
 @Getter
 @AllArgsConstructor

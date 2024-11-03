@@ -5,7 +5,6 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,12 +21,11 @@ import static com.repinsky.task_tracker_backend.constants.Constant.ROLES;
 @Component
 @Getter
 @Setter
+@ConfigurationProperties(prefix = "app")
 public class JWTTokenUtil {
 
-    @Value("${app.jwt-secret}")
     private String jwtSecret;
 
-    @Value("${app.jwt-expiration}")
     private long jwtExpiration;
 
     public String generateToken(UserDetails userDetails) {

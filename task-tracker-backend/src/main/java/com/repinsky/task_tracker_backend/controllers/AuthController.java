@@ -6,6 +6,7 @@ import com.repinsky.task_tracker_backend.dto.RegisterUserDto;
 import com.repinsky.task_tracker_backend.dto.StringResponse;
 import com.repinsky.task_tracker_backend.exceptions.InputDataException;
 import com.repinsky.task_tracker_backend.jwt.JWTTokenUtil;
+import com.repinsky.task_tracker_backend.producer.RegistrationProducer;
 import com.repinsky.task_tracker_backend.services.CustomUserDetailsService;
 import com.repinsky.task_tracker_backend.services.UserService;
 import lombok.RequiredArgsConstructor;

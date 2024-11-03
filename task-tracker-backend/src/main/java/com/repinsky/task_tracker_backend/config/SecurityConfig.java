@@ -44,6 +44,7 @@ public class SecurityConfig {
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .exceptionHandling((exception) -> exception.authenticationEntryPoint
                         (new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)))
+                //  status 401 if guest is trying to get to the secured endpoint
                 .logout(httpSecurityLogoutConfigurer -> httpSecurityLogoutConfigurer
                         .logoutUrl("/api/v1/auth/logout")
                         .permitAll()
@@ -52,8 +53,7 @@ public class SecurityConfig {
                             response.getWriter().flush();
                         })
                 );
-        //  status 401 if guest is trying to get to the secured endpoint
-        http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+                http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
 
         return http.build();

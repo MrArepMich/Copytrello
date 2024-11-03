@@ -1,5 +1,6 @@
 package com.repinsky.task_tracker_backend.repositories;
 
+import com.repinsky.task_tracker_backend.constants.TaskStatus;
 import com.repinsky.task_tracker_backend.models.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -22,6 +23,6 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
     @Query("select t from Task t where t.owner.email = :currentUserEmail and t.id = :id")
     Optional<Task> findTaskByUserEmailAndId(String currentUserEmail, Long id);
 
-    @Query("select t from Task t where t.owner.email = :userEmail and t.status = :completedStatus")
-    Optional<List<Task>> findTaskByStatusAndUserEmail(String completedStatus, String userEmail);
+    @Query("select t from Task t where t.owner.email = :userEmail and t.status = :status")
+    Optional<List<Task>> findTaskByStatusAndUserEmail(TaskStatus status, String userEmail);
 }
