@@ -2,8 +2,8 @@ package com.repinsky.task_tracker_backend.services;
 
 import com.repinsky.task_tracker_backend.dto.RegisterUserDto;
 import com.repinsky.task_tracker_backend.exceptions.InputDataException;
-import com.repinsky.task_tracker_backend.exceptions.ResourceNotFoundException;
 import com.repinsky.task_tracker_backend.models.User;
+import com.repinsky.task_tracker_backend.producer.RegistrationProducer;
 import com.repinsky.task_tracker_backend.repositories.UserRepository;
 import com.repinsky.task_tracker_backend.utils.InputValidationUtil;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +25,7 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
     private final RoleService roleService;
     private final InputValidationUtil validationService = new InputValidationUtil();
+    private final RegistrationProducer registrationProducer;
 
     public void createNewUser(RegisterUserDto registerUserDto) throws InputDataException {
         if (registerUserDto.getPassword() == null) {
@@ -40,6 +41,7 @@ public class UserService {
             }
 
             userRepository.save(user);
+            registrationProducer.sendSuccessRegistration(registerUserDto.getEmail());
         }
     }
 
