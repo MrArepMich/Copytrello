@@ -1,22 +1,25 @@
 # Copytrello
 
-**Copytrello** — это многопользовательский планировщик задач, который предоставляет функциональность для регистрации и аутентификации пользователей, управления задачами и отправки уведомлений по email. Этот проект использует такие технологии, как Kafka, Docker и Spring Boot. Проект построен на микросервисной архитектуре и использует Docker и Kafka для взаимодействия между сервисами.
+# Copytrello
 
-### 📌 Сервисы Проекта
+**Copytrello** is a multi-user task planner that provides functionality for user registration and authentication, task management, and sending email notifications. This project utilizes technologies such as Kafka, Docker, and Spring Boot. It is built on a microservices architecture and uses Docker and Kafka for service interaction.
 
-Copytrello состоит из нескольких сервисов:
-- **Backend**: обрабатывает регистрацию и аутентификацию пользователей с использованием JWT, а также управление задачами.
-- **Email Sender**: отвечает за отправку email-уведомлений о регистрации и обновлениях задач.
-- **Scheduler**: в конце дня формирует список завершенных и незавершенных задач пользователя и составляет письмо для отправки на почту.
+### 📌 Project Services
 
-### ⚙️ Используемые технологии
+Copytrello consists of several services:
+- **Backend**: handles user registration and authentication using JWT, as well as task management.
+- **Email Sender**: responsible for sending email notifications about registration and task updates.
+- **Scheduler**: at the end of the day, it compiles a list of completed and uncompleted tasks for the user and prepares an email for sending.
 
-- **Язык программирования**: Java
-- **Сборка проекта**: Gradle
-- **Фреймворк**: Spring Boot (включая модули Spring Security, Spring Kafka, Spring Scheduler, Spring Mail)
-- **Аутентификация**: JWT
-- **База данных**: PostgreSQL с использованием Spring Data JPA
-- **Миграции**: Flyway
-- **Фронтенд**: HTML/CSS, Bootstrap, JavaScript, Ajax
-- **Инфраструктура**: Docker и микросервисы
-- **Брокер сообщений**: Kafka 
+### ⚙️ Technologies Used
+
+- **Programming Language**: Java
+- **Build Tool**: Gradle
+- **Framework**: Spring Boot (including Spring Security, Spring Kafka, Spring Scheduler, Spring Mail)
+- **Authentication**: JWT
+- **Database**: PostgreSQL with Spring Data JPA
+- **Migrations**: Flyway
+- **Frontend**: HTML/CSS, Bootstrap, JavaScript, Ajax
+- **Infrastructure**: Docker and microservices
+- **Message Broker**: Kafka
+
