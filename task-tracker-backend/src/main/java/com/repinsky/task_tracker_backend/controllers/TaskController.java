@@ -1,5 +1,6 @@
 package com.repinsky.task_tracker_backend.controllers;
 
+import com.repinsky.task_tracker_backend.constants.TaskStatus;
 import com.repinsky.task_tracker_backend.dto.StringResponse;
 import com.repinsky.task_tracker_backend.dto.CreateTaskRequest;
 import com.repinsky.task_tracker_backend.dto.UpdateTaskRequest;
@@ -10,9 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
-
-import static com.repinsky.task_tracker_backend.constants.Constant.COMPLETED;
-import static com.repinsky.task_tracker_backend.constants.Constant.IN_PROGRESS;
 
 @RestController
 @RequiredArgsConstructor
@@ -92,11 +90,11 @@ public class TaskController {
 
     @GetMapping("/completed")
     public ResponseEntity<?> getCompletedTasks(){
-        return ResponseEntity.ok(taskService.getTasksWithStatus(COMPLETED.getValue(), userService.getCurrentUserEmail()));
+        return ResponseEntity.ok(taskService.getTasksWithStatus(TaskStatus.COMPLETED, userService.getCurrentUserEmail()));
     }
 
     @GetMapping("/in-progress")
     public ResponseEntity<?> getInProgressTasks(){
-        return ResponseEntity.ok(taskService.getTasksWithStatus(IN_PROGRESS.getValue(), userService.getCurrentUserEmail()));
+        return ResponseEntity.ok(taskService.getTasksWithStatus(TaskStatus.IN_PROGRESS, userService.getCurrentUserEmail()));
     }
 }

@@ -1,5 +1,6 @@
 package com.repinsky.task_tracker_backend.services;
 
+import com.repinsky.task_tracker_backend.constants.TaskStatus;
 import com.repinsky.task_tracker_backend.converters.TaskConverter;
 import com.repinsky.task_tracker_backend.dto.TaskDto;
 import com.repinsky.task_tracker_backend.exceptions.BadRequestException;
@@ -12,12 +13,10 @@ import com.repinsky.task_tracker_backend.repositories.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationContext;
-import org.springframework.stereotype.Service;
-
 import java.sql.Timestamp;
+import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -40,7 +39,7 @@ public class TaskService {
                 .title(title)
                 .description(description)
                 .owner(owner)
-                .status("in progress")
+                .status(TaskStatus.IN_PROGRESS)
                 .build();
 
         TaskService proxy = applicationContext.getBean(TaskService.class);
@@ -109,7 +108,7 @@ public class TaskService {
         return "Task deleted successfully";
     }
 
-    public List<TaskDto> getTasksWithStatus(String status, String currentUserEmail) {
+    public List<TaskDto> getTasksWithStatus(TaskStatus status, String currentUserEmail) {
         List<Task> tasks = taskRepository.findTaskByStatusAndUserEmail(status, currentUserEmail).orElseThrow(
                 () -> new TaskNotFoundException("You do not have tasks with status '" + status + "'")
         );
@@ -152,7 +151,8 @@ public class TaskService {
                     break;
 
                 case "status":
-                    task.setStatus((String) value);
+                    TaskStatus taskStatus = TaskStatus.valueOf((String) value.toString().toUpperCase());
+                    task.setStatus(taskStatus);
                     break;
 
                 default:
@@ -160,7 +160,7 @@ public class TaskService {
             }
         });
 
-        if ("completed".equals(task.getStatus())) {
+        if (TaskStatus.COMPLETED.equals(task.getStatus())) {
             Timestamp completed = new Timestamp(System.currentTimeMillis());
             task.setCompletedAt(completed);
         }
@@ -189,7 +189,7 @@ public class TaskService {
 
     private String updateTaskWithNewValues(String userEmail, String newTitle, String newDescription, String newStatus, Task task) {
         if (newTitle == null || newStatus == null) {
-            throw new TaskNotFoundException("Title and status for new task cannot be be empty");
+            throw new TaskNotFoundException("Title and status for new task cannot be empty");
         }
 
         List<Task> tasks = taskRepository.findAllTasksByEmailAndTitle(userEmail, newTitle);
@@ -197,12 +197,22 @@ public class TaskService {
         if (!tasks.isEmpty() && !tasks.contains(task)) {
             throw new BadRequestException("Task with title '" + newTitle + "' already exists");
         }
+
+        TaskStatus taskStatus;
+        try {
+            taskStatus = TaskStatus.valueOf(newStatus.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            throw new BadRequestException("Invalid status: " + newStatus);
+        }
+
         task.setTitle(newTitle);
         task.setDescription(newDescription);
-        task.setStatus(newStatus);
-        if (task.getStatus().equals("completed")) {
-            Timestamp completed = new Timestamp(System.currentTimeMillis());
-            task.setCompletedAt(completed);
+        task.setStatus(taskStatus);
+
+        if (task.getStatus() == TaskStatus.COMPLETED) {
+            task.setCompletedAt(new Timestamp(System.currentTimeMillis()));
+        } else {
+            task.setCompletedAt(null);
         }
 
         TaskService proxy = applicationContext.getBean(TaskService.class);

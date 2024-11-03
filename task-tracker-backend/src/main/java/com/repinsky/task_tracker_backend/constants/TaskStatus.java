@@ -1,15 +1,13 @@
 package com.repinsky.task_tracker_backend.constants;
 
-public enum Constant {
-    ROLES("roles"),
-    BEARER("Bearer");
+public enum TaskStatus {
+    COMPLETED("COMPLETED"),
+    IN_PROGRESS("IN_PROGRESS");
 
     private final String value;
-
-    Constant(String value) {
+    TaskStatus(String value) {
         this.value = value;
     }
-
     public String getValue() {
         return value;
     }
