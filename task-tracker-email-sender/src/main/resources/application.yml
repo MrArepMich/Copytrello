@@ -1,0 +1,20 @@
+spring:
+  mail:
+    host: smtp.mailjet.com
+    port: 587
+    username: ${MAILJET_API_KEY}
+    password: ${MAILJET_SECRET_KEY}
+    properties:
+      mail:
+        smtp:
+          auth: true
+        starttls:
+          enable: true
+          required: true
+
+  application:
+    name: task-tracker-email-sender
+  kafka:
+    bootstrap-servers: localhost:9092
+server:
+  port: 8000
