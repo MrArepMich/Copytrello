@@ -1,7 +1,5 @@
 # Copytrello
 
-# Copytrello
-
 **Copytrello** is a multi-user task planner that provides functionality for user registration and authentication, task management, and sending email notifications. This project utilizes technologies such as Kafka, Docker, and Spring Boot. It is built on a microservices architecture and uses Docker and Kafka for service interaction.
 
 ### 📌 Project Services
