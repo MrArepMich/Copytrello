@@ -2,8 +2,8 @@ spring:
   mail:
     host: smtp.mailjet.com
     port: 587
-    username: ${MAILJET_API_KEY}
-    password: ${MAILJET_SECRET_KEY}
+    username: ${COPYTRELLO_MAILJET_API_KEY}
+    password: ${COPYTRELLO_MAILJET_SECRET_KEY}
     properties:
       mail:
         smtp:
@@ -16,5 +16,7 @@ spring:
     name: task-tracker-email-sender
   kafka:
     bootstrap-servers: localhost:9092
+  email:
+    from-address: copytrelloteam@gmail.com
 server:
   port: 8000

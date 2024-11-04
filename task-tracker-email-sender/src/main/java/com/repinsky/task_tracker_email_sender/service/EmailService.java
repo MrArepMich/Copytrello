@@ -1,6 +1,7 @@
 package com.repinsky.task_tracker_email_sender.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -10,14 +11,15 @@ import org.springframework.stereotype.Service;
 public class EmailService {
     private final JavaMailSender mailSender;
 
-    private static final String MAIL_FROM = "repinmichael42@gmail.com";
+    @Value("${spring.email.from-address}")
+    private String mailFrom;
 
     public void sendEmail(String to, String subject, String text) {
         var message = new SimpleMailMessage();
         message.setTo(to);
         message.setSubject(subject);
         message.setText(text);
-        message.setFrom(MAIL_FROM);
+        message.setFrom(mailFrom);
         mailSender.send(message);
     }
 }
