@@ -38,25 +38,33 @@ public class DailyTaskScheduler {
             List<Task> completedTasks = taskRepository.findTop5TasksByUserEmailAndStatus(user.getEmail(), TaskStatus.COMPLETED);
             List<Task> inProgressTasks = taskRepository.findTop5TasksByUserEmailAndStatus(user.getEmail(), TaskStatus.IN_PROGRESS);
 
-            StatisticDto statisticDto = new StatisticDto();
-            statisticDto.setEmail(user.getEmail());
-
-            List<TaskDto> completedTaskDtos = convertTasksToDto(completedTasks);
-            List<TaskDto> unFinishedTaskDtos = convertTasksToDto(inProgressTasks);
-
-            statisticDto.setCountCompletedTasks(completedTasks.size());
-            statisticDto.setCountUnFinishedTasks(inProgressTasks.size());
-            statisticDto.setCompletedTasks(completedTaskDtos);
-            statisticDto.setUnFinishedTasks(unFinishedTaskDtos);
+            if (completedTasks.isEmpty() && inProgressTasks.isEmpty()) {
+                continue;
+            }
 
             if (!completedTasks.isEmpty() && !inProgressTasks.isEmpty()) {
-                summaryProducer.sendAllTasks(statisticDto);
+                summaryProducer.sendAllTasks(fillStatisticDto(user, completedTasks, inProgressTasks));
             } else if (!completedTasks.isEmpty()) {
-                summaryProducer.sendCompletedTasks(statisticDto);
+                summaryProducer.sendCompletedTasks(fillStatisticDto(user, completedTasks, inProgressTasks));
             } else {
-                summaryProducer.sendUnfinishedTasks(statisticDto);
+                summaryProducer.sendUnfinishedTasks(fillStatisticDto(user, completedTasks, inProgressTasks));
             }
         }
+    }
+
+    private StatisticDto fillStatisticDto(User user, List<Task> completedTasks, List<Task> inProgressTasks) {
+        StatisticDto statisticDto = new StatisticDto();
+        statisticDto.setEmail(user.getEmail());
+
+        List<TaskDto> completedTaskDtos = convertTasksToDto(completedTasks);
+        List<TaskDto> unFinishedTaskDtos = convertTasksToDto(inProgressTasks);
+
+        statisticDto.setCountCompletedTasks(completedTasks.size());
+        statisticDto.setCountUnFinishedTasks(inProgressTasks.size());
+        statisticDto.setCompletedTasks(completedTaskDtos);
+        statisticDto.setUnFinishedTasks(unFinishedTaskDtos);
+
+        return statisticDto;
     }
 
     private List<TaskDto> convertTasksToDto(List<Task> tasks) {
