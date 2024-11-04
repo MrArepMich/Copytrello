@@ -38,6 +38,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers("/api/v1/auth/**").permitAll()
                         .requestMatchers("/api/v1/tasks/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                        .requestMatchers("/login.html", "/index.html",
+                                "/*.css", "/*.js", "/*.png").permitAll()
                 )
                 .csrf(CsrfConfigurer::disable)
                 .cors(CorsConfigurer::disable)
