@@ -3,8 +3,8 @@ spring:
     name: task-tracker-scheduler
   datasource:
     url: jdbc:postgresql://localhost:5431/copytrello_db
-    password: ${PG_PASSWORD}
+    password: ${POSTGRES_PASSWORD}
 server:
   port: 8880
 scheduling:
-  cron: "0 */2 * * * ?"
+  cron: "0 */5 * * * ?"

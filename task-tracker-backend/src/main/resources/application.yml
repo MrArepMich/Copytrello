@@ -6,8 +6,8 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5431/copytrello_db
-    username: ${PG_USER}
-    password: ${PG_PASSWORD}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
   jpa:
     hibernate:
       ddl-IDENTITY: update

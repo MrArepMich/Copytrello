@@ -17,6 +17,6 @@ spring:
   kafka:
     bootstrap-servers: localhost:9092
   email:
-    from-address: copytrelloteam@gmail.com
+    from-address: repinmichael42@gmail.com
 server:
   port: 8000
