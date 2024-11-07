@@ -13,7 +13,7 @@ services:
     volumes:
       - copytrello_db:/var/lib/postgresql/data
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U ${copytrello_db}" ]
+      test: ["CMD-SHELL", "pg_isready -U ${copytrello_db}"]
       interval: 20s
       timeout: 5s
       retries: 3
@@ -54,8 +54,8 @@ services:
   backend:
     restart: unless-stopped
     build:
-      context: task-tracker-backend
-      dockerfile: ../task-tracker-backend/Dockerfile
+      context: ./task-tracker-backend
+      dockerfile: Dockerfile
     container_name: copytrello-task-tracker-backend
     depends_on:
       - postgresql
@@ -74,8 +74,8 @@ services:
   scheduler:
     restart: unless-stopped
     build:
-      context: task-tracker-scheduler
-      dockerfile: ../task-tracker-scheduler/Dockerfile
+      context: ./task-tracker-scheduler
+      dockerfile: Dockerfile
     container_name: copytrello-task-tracker-scheduler
     depends_on:
       - backend
@@ -94,8 +94,8 @@ services:
   email-sender:
     restart: unless-stopped
     build:
-      context: task-tracker-email-sender
-      dockerfile: ../task-tracker-email-sender/Dockerfile
+      context: ./task-tracker-email-sender
+      dockerfile: Dockerfile
     container_name: copytrello-task-tracker-mail-sender
     depends_on:
       - kafka
@@ -119,4 +119,3 @@ volumes:
 networks:
   copytrello:
     driver: bridge
-
