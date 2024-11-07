@@ -1,64 +1,47 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const loginForm = document.querySelector('#login-form');
-    const registerForm = document.querySelector('#register-form');
+angular.module('copytrello', ['ngStorage'])
+    .controller('registerController', function ($scope, $http, $localStorage) {
 
-    loginForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const email = document.querySelector('#login-email').value;
-        const password = document.querySelector('#login-password').value;
+        $scope.user = {
+            email: '',
+            password: '',
+            confirmPassword: '',
+        };
 
-        fetch('http://localhost:8300/copytrello/api/v1/auth/authenticate', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.token) {
-                    localStorage.setItem('token', data.token);
-                    alert('Login successful!');
-                    window.location.href = 'index.html';
-                } else {
-                    alert('Login failed: ' + data.message);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert("Unexpected error occurred");
-            });
-    });
+        $scope.registerMe = function () {
+            if ($scope.user.password !== $scope.user.confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
 
-    registerForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const email = document.querySelector('#register-email').value;
-        const password = document.querySelector('#register-password').value;
-        const confirmPassword = document.querySelector('#register-confirm-password').value;
-
-        if (password !== confirmPassword) {
-            alert('Passwords do not match!');
-            return;
+            if ($scope.user.email && $scope.user.password && $scope.user.confirmPassword) {
+                $http.post('http://localhost:8300/copytrello/api/v1/auth/register', $scope.user)
+                    .then(function (response) {
+                        alert(response.data.value);
+                        window.location.href = 'index.html';
+                    }, function errorCallback(response) {
+                        alert(response.data.value);
+                    });
+            }
         }
 
-        fetch('http://localhost:8300/copytrello/api/v1/auth/register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert('Registration successful!');
-                } else {
-                    alert('Registration failed: ' + data.message);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert("Unexpected error occurred");
-            });
-    });
-});
+        $scope.loginMe = function () {
+            $http.post('http://localhost:8300/copytrello/api/v1/auth/authenticate', $scope.user)
+                .then(function successCallback(response) {
+                    if (response.data.token) {
+                        $http.defaults.headers.common.Authorization = 'Bearer ' + response.data.token;
+                        $localStorage.copytrelloUser = {username: $scope.user.email, token: response.data.token};
+                        $scope.userRoles = response.data.roles;
+                        alert($scope.user.email + ' is authorized');
+                        $scope.user.email = null;
+                        $scope.user.password = null;
+                        window.location.href = 'index.html';
+                    }
+                }, function errorCallback(error) {
+                    if (error.data && error.data.value) {
+                        alert(error.data.value);
+                    } else {
+                        alert("Unexpected error occurred");
+                    }
+                });
+        };
+    })

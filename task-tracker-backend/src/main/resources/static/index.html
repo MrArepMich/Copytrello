@@ -3,44 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Copytrello</title>
+    <title>Task Management</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        .container {
-            max-width: 500px;
-            margin-top: 50px;
-            margin-right: 220px;
+        body {
+            background-color: #f8f9fa;
         }
-        .container2{
-            max-width: 500px;
+        .container {
+            max-width: 800px;
             margin-top: 50px;
+        }
+        .task-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .task-item h5 {
+            margin: 0;
+        }
+        .task-item p {
+            margin: 0;
+            color: #6c757d;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-select {
+            margin-right: 10px;
+        }
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
     </style>
 </head>
-<body>
+<body ng-app="copytrello" ng-controller="taskController">
 <div class="container">
-    <h2>Create New Task</h2>
-    <div id="task-container" class="mt-4">
-        <!-- Task list will be rendered here -->
+    <h2 class="text-center mb-4">Task Management</h2>
+
+    <!-- Sign out -->
+    <button class="btn btn-primary" ng-click="tryToLogout()" style="position: absolute; top: 10px; right: 10px;">Sign Out</button>
+
+    <!-- Search Container -->
+    <div class="input-group mb-4 search-container">
+        <select class="form-control search-select" ng-model="searchType">
+            <option value="title">Get Task by Title</option>
+            <option value="id">Get Task by ID</option>
+        </select>
+        <input type="text" class="form-control" ng-model="searchQuery" placeholder="Enter search query">
+        <div class="input-group-append">
+            <button class="btn btn-secondary" type="button" ng-click="searchTask()">Search</button>
+        </div>
     </div>
-    <form id="task-form" class="mt-4">
+
+    <!-- Filter by Status -->
+    <div class="input-group mb-4">
+        <select class="form-control" ng-model="filterStatus">
+            <option value="">All Tasks</option>
+            <option value="In Progress">In Progress Tasks</option>
+            <option value="Completed">Completed Tasks</option>
+        </select> <div class="input-group-append">
+        <button class="btn btn-secondary" type="button" ng-click="filterTasks()">Filter</button>
+    </div>
+    </div>
+
+    <!-- Create Task Form -->
+    <form ng-submit="createTask()" class="mb-4">
         <div class="form-group">
             <label for="task-title">Task Title</label>
-            <input type="text" class="form-control" id="task-title" required>
+            <input type="text" class="form-control" id="task-title" ng-model="newTask.title" placeholder="Enter task title" required>
         </div>
         <div class="form-group">
             <label for="task-desc">Task Description</label>
-            <input type="text" class="form-control" id="task-desc">
+            <input type="text" class="form-control" id="task-desc" ng-model="newTask.description" placeholder="Enter task description">
         </div>
         <button type="submit" class="btn btn-primary">Add Task</button>
     </form>
-</div>
-<div class="container2">
-    <h4>Create New Task</h4>
+
+    <!-- Task List Header -->
+    <div class="task-header mb-3">
+        <h4>Task List</h4>
+        <button class="btn btn-primary" type="button" ng-click="getAllTasks()">Get All Tasks</button>
+    </div>
+
+    <!-- Task List -->
+    <ul class="list-group mb-4">
+        <li class="list-group-item task-item" ng-repeat="task in tasks">
+            <div>
+                <h5>{{ task.title }}</h5>
+                <p>{{ task.description }}</p>
+                <p>Status: {{ task.status }}</p>
+                <p>Created At: {{ task.createdAt }}</p>
+                <p>Completed At: {{ task.completedAt }}</p>
+                <p>Task id: {{ task.id }}</p>
+            </div>
+            <div>
+                <button class="btn btn-success btn-sm" ng-click="editTask(task)">Edit</button>
+                <button class="btn btn-danger btn-sm" ng-click="deleteTask(task.id)">Delete</button>
+            </div>
+        </li>
+    </ul>
+
+    <!-- Edit Task Modal -->
+    <div class="modal fade" id="editTaskModal" tabindex="-1" role="dialog" aria-labelledby="editTaskModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editTaskModalLabel">Edit Task</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form ng-submit="updateTask()">
+                        <div class="form-group">
+                            <label for="edit-task-title">Task Title</label>
+                            <input type="text" class="form-control" id="edit-task-title" ng-model="currentEditTask.title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-task-desc">Task Description</label>
+                            <input type="text" class="form-control" id="edit-task-desc" ng-model="currentEditTask.description">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-task-status">Task Status</label>
+                            <select class="form-control" id="edit-task-status" ng-model="currentEditTask.status">
+                                <option value="In_Progress">In_Progress</option>
+                                <option value="Completed">Completed</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete All Tasks -->
+    <div class="input-group mb-4" ng-show="tasks.length > 0">
+        <button class="btn btn-danger" type="button" ng-click="deleteAllTasks()">Delete All Tasks</button>
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="app.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
+<script src="index.js"></script>
 </body>
 </html>
