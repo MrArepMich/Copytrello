@@ -30,7 +30,7 @@ VALUES ('ROLE_USER'),
 
 INSERT INTO users (email, password)
 VALUES ('user@gmail.com', '$2a$04$ekqRbyAkWuSKu3Wh1kBVhethtsDjyeh1E6JiJu6p4.bvSYXk1jKG.'),
-       ('doctor@gmail.com', '$2a$04$BTRACNBSZ3NDNDFysl99hekwNt93/F6Ld4vv3K9tyjO3RGLcxwlDy'),
+       ('doctorteam@gmail.com', '$2a$04$BTRACNBSZ3NDNDFysl99hekwNt93/F6Ld4vv3K9tyjO3RGLcxwlDy'),
        ('admin@gmail.com', '$2a$04$iTSRnZLeZyHMMFJ6YoGO3OPEl10ThcRpZIIweZsEdwuwsjOr.rzwS');
 
 INSERT INTO users_roles (user_id, role_id)
