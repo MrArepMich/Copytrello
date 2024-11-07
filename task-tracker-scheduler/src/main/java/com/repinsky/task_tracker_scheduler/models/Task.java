@@ -28,10 +28,17 @@ public class Task {
     @JoinColumn(name = "owner_id", nullable = false)
     private User owner;
 
+    @Column(name = "created_at", nullable = false, updatable = false, insertable = false)
+    private Timestamp createdAt;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
     private TaskStatus status;
 
     @Column(name = "completed_at")
     private Timestamp completedAt;
+
+    @PrePersist protected void onCreate() {
+        createdAt = new Timestamp(System.currentTimeMillis());
+    }
 }
