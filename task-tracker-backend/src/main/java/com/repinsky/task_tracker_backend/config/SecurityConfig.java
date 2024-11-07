@@ -3,7 +3,6 @@ package com.repinsky.task_tracker_backend.config;
 import com.repinsky.task_tracker_backend.jwt.AuthTokenFilter;
 import com.repinsky.task_tracker_backend.jwt.JWTTokenUtil;
 import com.repinsky.task_tracker_backend.services.CustomUserDetailsService;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -38,23 +37,15 @@ public class SecurityConfig {
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers("/api/v1/auth/**").permitAll()
                         .requestMatchers("/api/v1/tasks/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
-                        .requestMatchers("/login.html", "/index.html",
-                                "/*.css", "/*.js", "/*.png").permitAll()
+                        .requestMatchers("/login.html", "/index.html", "/*.js").permitAll()
                 )
                 .csrf(CsrfConfigurer::disable)
                 .cors(CorsConfigurer::disable)
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .exceptionHandling((exception) -> exception.authenticationEntryPoint
-                        (new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)))
+                        (new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)));
                 //  status 401 if guest is trying to get to the secured endpoint
-                .logout(httpSecurityLogoutConfigurer -> httpSecurityLogoutConfigurer
-                        .logoutUrl("/api/v1/auth/logout")
-                        .permitAll()
-                        .logoutSuccessHandler((request, response, authentication) -> {
-                            response.setStatus(HttpServletResponse.SC_OK);
-                            response.getWriter().flush();
-                        })
-                );
+
                 http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
 

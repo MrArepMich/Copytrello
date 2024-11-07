@@ -59,10 +59,6 @@ public class JWTTokenUtil {
         return getAllClaimsFromToken(token).getSubject();
     }
 
-    public List<String> getRolesFromToken(String token){
-        return getAllClaimsFromToken(token).get(ROLES.getValue(), List.class);
-    }
-
     public String validateJwtToken(String authToken) {
         Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);
         return "";

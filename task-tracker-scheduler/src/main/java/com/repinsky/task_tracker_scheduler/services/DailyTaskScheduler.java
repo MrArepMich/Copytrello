@@ -10,13 +10,21 @@ import com.repinsky.task_tracker_scheduler.produser.SummaryProducer;
 import com.repinsky.task_tracker_scheduler.repositories.RoleRepository;
 import com.repinsky.task_tracker_scheduler.repositories.TaskRepository;
 import com.repinsky.task_tracker_scheduler.repositories.UserRepository;
+import com.repinsky.task_tracker_scheduler.utils.TimestampConverterUtil;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
+import java.sql.Timestamp;
+import java.util.HashMap;
 import java.util.List;
 
+import static com.repinsky.task_tracker_scheduler.constants.Constant.TODAY_END;
+import static com.repinsky.task_tracker_scheduler.constants.Constant.TODAY_START;
+
+@Slf4j
 @Configuration
 @EnableScheduling
 @RequiredArgsConstructor
@@ -30,12 +38,16 @@ public class DailyTaskScheduler {
 
     @Scheduled(cron = "${scheduling.cron}")
     public void sendTaskStatistic(){
+
         List<User> users = userRepository.findAll();
         for (User user : users) {
             user.setRoles(roleRepository.findRolesByUserId(user.getId()));
             user.setTasks(taskRepository.findTasksByOwnerId(user.getId()));
 
-            List<Task> completedTasks = taskRepository.findTop5TasksByUserEmailAndStatus(user.getEmail(), TaskStatus.COMPLETED);
+            HashMap<String, Timestamp> todayDiapasonTimestamp = TimestampConverterUtil.convertLocalDateTimeToTimestamp();
+
+            List<Task> completedTasks = taskRepository.findTop5TasksByUserEmailAndCreatedAtBetweenAndStatus(user.getEmail(),
+                    todayDiapasonTimestamp.get(TODAY_START.getValue()), todayDiapasonTimestamp.get(TODAY_END.getValue()), TaskStatus.COMPLETED);
             List<Task> inProgressTasks = taskRepository.findTop5TasksByUserEmailAndStatus(user.getEmail(), TaskStatus.IN_PROGRESS);
 
             if (completedTasks.isEmpty() && inProgressTasks.isEmpty()) {

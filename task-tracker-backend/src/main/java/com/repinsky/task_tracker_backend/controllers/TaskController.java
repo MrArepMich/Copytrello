@@ -10,8 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("api/v1/tasks")
@@ -48,16 +46,6 @@ public class TaskController {
                 updateTaskRequest.status())));
     }
 
-    @PatchMapping("/title/{title}")
-    public ResponseEntity<?> patchTaskByTitle(@PathVariable String title, @RequestBody Map<String, Object> updates) {
-        return ResponseEntity.ok(new StringResponse(taskService.patchTaskByTitle(title, userService.getCurrentUserEmail(), updates)));
-    }
-
-    @DeleteMapping("/title/{title}")
-    public ResponseEntity<?> deleteTaskByTitle(@PathVariable String title) {
-        return ResponseEntity.ok(new StringResponse(taskService.deleteTaskByTitle(title, userService.getCurrentUserEmail())));
-    }
-
     @DeleteMapping()
     public ResponseEntity<?> deleteAllTasks() {
         return ResponseEntity.ok(new StringResponse(taskService.deleteAllTasks(userService.getCurrentUserEmail())));
@@ -72,20 +60,6 @@ public class TaskController {
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteTaskById(@PathVariable Long id) {
         return ResponseEntity.ok(new StringResponse(taskService.deleteTaskById(id, userService.getCurrentUserEmail())));
-    }
-
-    @PatchMapping("/{id}")
-    public ResponseEntity<?> updateTaskById(@PathVariable Long id, @RequestBody Map<String, Object> updates) {
-        return ResponseEntity.ok(new StringResponse(taskService.updateTaskById(id, userService.getCurrentUserEmail(), updates)));
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<?> patchTaskById(@PathVariable Long id, @RequestBody UpdateTaskRequest updateTaskRequest) {
-        return ResponseEntity.ok(new StringResponse(taskService.patchTaskById(id,
-                userService.getCurrentUserEmail(),
-                updateTaskRequest.title(),
-                updateTaskRequest.description(),
-                updateTaskRequest.status())));
     }
 
     @GetMapping("/completed")

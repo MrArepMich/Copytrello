@@ -20,7 +20,6 @@ import java.util.List;
 @AllArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
     private final UserRepository userRepository;
-    private final RoleRepository roleRepository;
 
     public User findByUserEmail(String email) {
         return userRepository.findByEmail(email)
@@ -39,11 +38,6 @@ public class CustomUserDetailsService implements UserDetailsService {
         return roles.stream()
                 .map(role -> new SimpleGrantedAuthority(role.getTitle()))
                 .toList();
-    }
-
-    public void createUser(User user) {
-        user.setRoles(List.of(roleRepository.findByTitle("ROLE_USER").get()));
-        userRepository.save(user);
     }
 
     public List<String> getRoles(String username) {

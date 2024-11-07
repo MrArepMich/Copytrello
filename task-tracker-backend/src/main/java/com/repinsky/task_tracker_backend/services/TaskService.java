@@ -16,7 +16,6 @@ import org.springframework.context.ApplicationContext;
 import java.sql.Timestamp;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -57,17 +56,6 @@ public class TaskService {
                 .toList();
     }
 
-    public String deleteTaskByTitle(String taskTitle, String userEmail) {
-        Task task = taskRepository.findTaskByTitleAndUserEmail(taskTitle, userEmail).orElseThrow(
-                () -> new TaskNotFoundException("Task with title '" + taskTitle + "' not found")
-        );
-
-        TaskService proxy = applicationContext.getBean(TaskService.class);
-        proxy.deleteTaskFromDb(task);
-
-        return "Task deleted successfully";
-    }
-
     public String deleteAllTasks(String currentUserEmail) {
         List<Task> tasks = taskRepository.findAllByUserEmail(currentUserEmail).orElseThrow(
                 () -> new TaskNotFoundException("Tasks for user '" + currentUserEmail + "' not found")
@@ -89,12 +77,12 @@ public class TaskService {
         return taskConverter.entityToDto(task);
     }
 
-    public List<TaskDto> getTaskByTitle(String title, String currentUserEmail) {
+    public TaskDto getTaskByTitle(String title, String currentUserEmail) {
         Task task = taskRepository.findTaskByTitleAndUserEmail(title, currentUserEmail).orElseThrow(
                 () -> new TaskNotFoundException("Task with title '" + title + "' does not exist")
         );
 
-        return List.of(taskConverter.entityToDto(task));
+        return taskConverter.entityToDto(task);
     }
 
     public String deleteTaskById(Long id, String currentUserEmail) {
@@ -109,79 +97,16 @@ public class TaskService {
     }
 
     public List<TaskDto> getTasksWithStatus(TaskStatus status, String currentUserEmail) {
-        List<Task> tasks = taskRepository.findTaskByStatusAndUserEmail(status, currentUserEmail).orElseThrow(
-                () -> new TaskNotFoundException("You do not have tasks with status '" + status + "'")
-        );
+        List<Task> tasks = taskRepository.findTaskByUserEmailAndStatus(currentUserEmail, status);
 
         return tasks.stream()
                 .map(taskConverter::entityToDto)
                 .collect(Collectors.toList());
     }
 
-    public String patchTaskByTitle(String title, String currentUserEmail, Map<String, Object> updates) {
-        Task task = taskRepository.findTaskByTitleAndUserEmail(title, currentUserEmail).orElseThrow(
-                () -> new TaskNotFoundException("Task with title '" + title + "' not found")
-        );
-
-        return applyUpdatesToTask(currentUserEmail, updates, task);
-    }
-
-    public String updateTaskById(Long id, String currentUserEmail, Map<String, Object> updates) {
-        Task task = taskRepository.findTaskByUserEmailAndId(currentUserEmail, id).orElseThrow(
-                () -> new TaskNotFoundException("Task with id '" + id + "' for user '" + currentUserEmail + "' does not exist")
-        );
-
-        return applyUpdatesToTask(currentUserEmail, updates, task);
-    }
-
-    private String applyUpdatesToTask(String userEmail, Map<String, Object> updates, Task task) {
-        updates.forEach((key, value) -> {
-            switch (key) {
-                case "title":
-                    List<Task> tasks = taskRepository.findAllTasksByEmailAndTitle(userEmail, (String) value);
-
-                    if (!tasks.isEmpty() && !tasks.contains(task)) {
-                        throw new BadRequestException("Task with title '" + value + "' already exists");
-                    }
-                    task.setTitle((String) value);
-                    break;
-
-                case "description":
-                    task.setDescription((String) value);
-                    break;
-
-                case "status":
-                    TaskStatus taskStatus = TaskStatus.valueOf((String) value.toString().toUpperCase());
-                    task.setStatus(taskStatus);
-                    break;
-
-                default:
-                    throw new BadRequestException("Invalid field: " + key);
-            }
-        });
-
-        if (TaskStatus.COMPLETED.equals(task.getStatus())) {
-            Timestamp completed = new Timestamp(System.currentTimeMillis());
-            task.setCompletedAt(completed);
-        }
-
-        TaskService proxy = applicationContext.getBean(TaskService.class);
-        proxy.saveTaskToDb(task);
-
-        return "Task updated successfully";
-    }
-
     public String updateTaskByTitle(String title, String currentUserEmail, String newTitle, String newDescription, String newStatus) {
         Task task = taskRepository.findTaskByTitleAndUserEmail(title, currentUserEmail).orElseThrow(
                 () -> new TaskNotFoundException("Task with title '" + title + "' does not exist")
-        );
-
-        return updateTaskWithNewValues(currentUserEmail, newTitle, newDescription, newStatus, task);
-    }
-
-    public String patchTaskById(Long id, String currentUserEmail, String newTitle, String newDescription, String newStatus) {
-        Task task = taskRepository.findTaskByUserEmailAndId(currentUserEmail, id).orElseThrow(
-                () -> new TaskNotFoundException("Task with id'" + id + "' for user '" + currentUserEmail + "' does not exist")
         );
 
         return updateTaskWithNewValues(currentUserEmail, newTitle, newDescription, newStatus, task);

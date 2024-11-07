@@ -2,11 +2,10 @@ package com.repinsky.task_tracker_backend.controllers;
 
 import com.repinsky.task_tracker_backend.dto.JWTRequest;
 import com.repinsky.task_tracker_backend.dto.JWTResponse;
-import com.repinsky.task_tracker_backend.dto.RegisterUserDto;
+import com.repinsky.task_tracker_backend.dto.RegisterUserRequest;
 import com.repinsky.task_tracker_backend.dto.StringResponse;
 import com.repinsky.task_tracker_backend.exceptions.InputDataException;
 import com.repinsky.task_tracker_backend.jwt.JWTTokenUtil;
-import com.repinsky.task_tracker_backend.producer.RegistrationProducer;
 import com.repinsky.task_tracker_backend.services.CustomUserDetailsService;
 import com.repinsky.task_tracker_backend.services.UserService;
 import lombok.RequiredArgsConstructor;
@@ -44,9 +43,8 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> registerNewUser(@RequestBody RegisterUserDto registerUserDto) throws InputDataException {
-        userService.createNewUser(registerUserDto);
-        return ResponseEntity.ok(new StringResponse("User with email " + registerUserDto.getEmail()
-                + " is successfully signed up"));
+    public ResponseEntity<?> registerNewUser(@RequestBody RegisterUserRequest registerUserRequest) throws InputDataException {
+        userService.createNewUser(registerUserRequest);
+        return ResponseEntity.ok(new StringResponse("User with email '" + registerUserRequest.getEmail() + "' registered successfully"));
     }
 }

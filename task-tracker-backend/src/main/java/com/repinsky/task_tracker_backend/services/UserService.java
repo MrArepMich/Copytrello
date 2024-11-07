@@ -1,6 +1,6 @@
 package com.repinsky.task_tracker_backend.services;
 
-import com.repinsky.task_tracker_backend.dto.RegisterUserDto;
+import com.repinsky.task_tracker_backend.dto.RegisterUserRequest;
 import com.repinsky.task_tracker_backend.exceptions.InputDataException;
 import com.repinsky.task_tracker_backend.models.User;
 import com.repinsky.task_tracker_backend.producer.RegistrationProducer;
@@ -27,28 +27,28 @@ public class UserService {
     private final InputValidationUtil validationService = new InputValidationUtil();
     private final RegistrationProducer registrationProducer;
 
-    public void createNewUser(RegisterUserDto registerUserDto) throws InputDataException {
-        if (registerUserDto.getPassword() == null) {
+    public void createNewUser(RegisterUserRequest registerUserRequest) throws InputDataException {
+        if (registerUserRequest.getPassword() == null) {
             throw new InputDataException(PASSWORD_CANNOT_BE_EMPTY.getValue());
-        } else if (!registerUserDto.getPassword().equals(registerUserDto.getConfirmPassword())) {
+        } else if (!registerUserRequest.getPassword().equals(registerUserRequest.getConfirmPassword())) {
             throw new InputDataException(PASSWORD_MISMATCH.getValue());
         } else {
             User user = new User();
-            String encryptedPassword = passwordEncoder.encode(registerUserDto.getPassword());
-            String validationMessage = validateAndSaveUserFields(registerUserDto, encryptedPassword, user);
+            String encryptedPassword = passwordEncoder.encode(registerUserRequest.getPassword());
+            String validationMessage = validateAndSaveUserFields(registerUserRequest, encryptedPassword, user);
             if (validationMessage != null) {
                 throw new InputDataException(validationMessage);
             }
 
             userRepository.save(user);
-            registrationProducer.sendSuccessRegistration(registerUserDto.getEmail());
+            registrationProducer.sendSuccessRegistration(registerUserRequest.getEmail());
         }
     }
 
-    private String validateAndSaveUserFields(RegisterUserDto registerUserDto, String encryptedPassword, User user) {
+    private String validateAndSaveUserFields(RegisterUserRequest registerUserRequest, String encryptedPassword, User user) {
         user.setRoles(Collections.singleton(roleService.getManagerRole()));
 
-        String email = registerUserDto.getEmail();
+        String email = registerUserRequest.getEmail();
         String validationMessage = "";
 
         validationMessage = validationService.acceptableEmail(email);
@@ -62,7 +62,7 @@ public class UserService {
             return validationMessage;
         }
 
-        validationMessage = validationService.acceptablePassword(registerUserDto.getPassword());
+        validationMessage = validationService.acceptablePassword(registerUserRequest.getPassword());
         // we take the password from the DTO, because we check the validity of the unencrypted password and save it
         // to the database
         if (validationMessage.equals("")) {

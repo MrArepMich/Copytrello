@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
+
     @Query("select t from Task t where t.owner.email = :userEmail")
     Optional<List<Task>> findAllByUserEmail(String userEmail);
 
@@ -24,5 +25,5 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
     Optional<Task> findTaskByUserEmailAndId(String currentUserEmail, Long id);
 
     @Query("select t from Task t where t.owner.email = :userEmail and t.status = :status")
-    Optional<List<Task>> findTaskByStatusAndUserEmail(TaskStatus status, String userEmail);
+    List<Task> findTaskByUserEmailAndStatus(String userEmail, TaskStatus status);
 }
