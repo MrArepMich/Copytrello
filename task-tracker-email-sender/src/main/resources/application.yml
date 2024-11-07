@@ -2,8 +2,8 @@ spring:
   mail:
     host: smtp.mailjet.com
     port: 587
-    username: ${COPYTRELLO_MAILJET_API_KEY}
-    password: ${COPYTRELLO_MAILJET_SECRET_KEY}
+    username: ${MAILjET_API_KEY}
+    password: ${MAILjET_SECRET_KEY}
     properties:
       mail:
         smtp:
