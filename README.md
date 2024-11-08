@@ -45,7 +45,7 @@ Copytrello is a multi-user task planner that provides user registration and auth
     COPYTRELLO_MAILJET_SECRET_KEY=yourMailjetSecretKey
     ```
 
-    To obtain Mailjet keys, register on the official Mailjet website. Go to the API section and generate a SECRET KEY. Also, in the email-sender configuration file, replace the email address with the one you registered with Mailjet.
+    To obtain Mailjet keys, register on the official [Mailjet website](https://www.mailjet.com/). Go to the API section and generate a SECRET KEY. Also, in the email-sender configuration file, replace the email address with the one you registered with Mailjet.
 
 5. Start the project using Docker Compose:
 
