@@ -113,8 +113,7 @@ services:
       - copytrello
 
 volumes:
-  copytrello_db:
-    external: true
+  copytrello_db: {}
 
 networks:
   copytrello:

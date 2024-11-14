@@ -16,8 +16,8 @@ angular.module('copytrello', ['ngStorage'])
             if ($scope.user.email && $scope.user.password && $scope.user.confirmPassword) {
                 $http.post('http://localhost:8300/copytrello/api/v1/auth/register', $scope.user)
                     .then(function (response) {
-                        alert(response.data.value);
-                        window.location.href = 'index.html';
+                        $('#login-tab').tab('show');
+                        alert("Registration successful! Please log in.");
                     }, function errorCallback(response) {
                         alert(response.data.value);
                     });
