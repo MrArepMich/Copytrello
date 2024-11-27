@@ -9,6 +9,7 @@ import com.repinsky.task_tracker_backend.jwt.JWTTokenUtil;
 import com.repinsky.task_tracker_backend.services.CustomUserDetailsService;
 import com.repinsky.task_tracker_backend.services.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -16,12 +17,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.logging.Logger;
-
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("api/v1/auth")
 public class AuthController {
-    private static final Logger logger = Logger.getLogger(AuthController.class.getName());
     private final CustomUserDetailsService customUserDetailsService;
     private final JWTTokenUtil jwtTokenUtil;
     private final AuthenticationManager authenticationManager;
@@ -29,7 +29,7 @@ public class AuthController {
 
     @PostMapping("/authenticate")
     public ResponseEntity<?> createAuthToken(@RequestBody JWTRequest authRequest) {
-        logger.info("Received authentication request for user email: " + authRequest.getEmail());
+        log.info("Received authentication request for user email: {}", authRequest.getEmail());
 
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 authRequest.getEmail(), authRequest.getPassword()));
@@ -37,13 +37,14 @@ public class AuthController {
         UserDetails userDetails = customUserDetailsService.loadUserByUsername(authRequest.getEmail());
         String token = jwtTokenUtil.generateToken(userDetails);
 
-        logger.info("Generated token for user with email: " + authRequest.getEmail());
+        log.info("Generated token for user with email: {}", authRequest.getEmail());
 
         return ResponseEntity.ok(new JWTResponse(token, customUserDetailsService.getRoles(authRequest.getEmail())));
     }
 
     @PostMapping("/register")
     public ResponseEntity<?> registerNewUser(@RequestBody RegisterUserRequest registerUserRequest) throws InputDataException {
+        log.info("Request to create new user: email -> {}, password -> {}, confirmedPassword -> {}", registerUserRequest.getEmail(), registerUserRequest.getPassword(), registerUserRequest.getConfirmPassword());
         userService.createNewUser(registerUserRequest);
         return ResponseEntity.ok(new StringResponse("User with email '" + registerUserRequest.getEmail() + "' registered successfully"));
     }

@@ -1,4 +1,4 @@
-package com.repinsky.task_tracker_scheduler.produser;
+package com.repinsky.task_tracker_scheduler.producer;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -59,22 +59,34 @@ public class SummaryProducer {
     }
 
     public void sendUnfinishedTasks(StatisticDto dto) {
+        log.info("Preparing to send unfinished tasks email to '{}'. Number of tasks: {}", dto.getEmail(), dto.getCountUnFinishedTasks());
+
         String formatted = String.format(UNFINISHED_TASKS_MESSAGE, dto.getEmail(),
                 dto.getCountUnFinishedTasks(), FormatTaskUtil.formatTasks(dto.getUnFinishedTasks()));
         send(new Message(dto.getEmail(), "In progress tasks", formatted));
+
+        log.info("Unfinished tasks email sent successfully to '{}'.", dto.getEmail());
     }
 
     public void sendCompletedTasks(StatisticDto dto) {
+        log.info("Preparing to send completed tasks email to '{}'. Number of tasks: {}", dto.getEmail(), dto.getCountCompletedTasks());
+
         String formatted = String.format(FINISHED_TASKS_MESSAGE, dto.getEmail(),
                 dto.getCountCompletedTasks(), FormatTaskUtil.formatTasks(dto.getCompletedTasks()));
         send(new Message(dto.getEmail(), "Completed tasks", formatted));
+
+        log.info("Completed tasks email sent successfully to '{}'.", dto.getEmail());
     }
 
     public void sendAllTasks(StatisticDto dto) {
+        log.info("Preparing to send unfinished and completed tasks email to '{}'. Number of unfinished tasks: '{}'. Number of completed tasks: '{}'", dto.getEmail(), dto.getCountUnFinishedTasks(), dto.getCountUnFinishedTasks());
+
         String allTaskMessageFormatted = String.format(ALL_TASKS_MESSAGE, dto.getEmail(), dto.getCountUnFinishedTasks(),
                 dto.getCountCompletedTasks(),
                 FormatTaskUtil.formatTasks(dto.getUnFinishedTasks()), FormatTaskUtil.formatTasks(dto.getCompletedTasks()));
         send(new Message(dto.getEmail(), "All tasks statistic", allTaskMessageFormatted));
+
+        log.info("Unfinished and completed tasks email sent successfully to '{}'.", dto.getEmail());
     }
 
     @Data

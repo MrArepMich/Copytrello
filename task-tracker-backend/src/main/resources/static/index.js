@@ -136,7 +136,7 @@ angular.module('copytrello', ['ngStorage'])
         };
 
         $scope.filterTasks = function() {
-            if ($scope.filterStatus === 'In_Progress') {
+            if ($scope.filterStatus === 'In Progress') {
                 $scope.getInProgressTasks();
             } else if ($scope.filterStatus === 'Completed') {
                 $scope.getCompletedTasks();

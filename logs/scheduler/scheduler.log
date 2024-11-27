@@ -1,0 +1,1898 @@
+2024-11-26 13:44:35 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 13:44:35 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 13:44:37 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 13:44:37 - Finished Spring Data repository scanning in 95 ms. Found 3 JPA repository interfaces.
+2024-11-26 13:44:39 - Tomcat initialized with port 8880 (http)
+2024-11-26 13:44:39 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 13:44:39 - Starting service [Tomcat]
+2024-11-26 13:44:39 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 13:44:39 - Initializing Spring embedded WebApplicationContext
+2024-11-26 13:44:39 - Root WebApplicationContext: initialization completed in 3411 ms
+2024-11-26 13:44:39 - HikariPool-1 - Starting...
+2024-11-26 13:44:40 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@65da01f4
+2024-11-26 13:44:40 - HikariPool-1 - Start completed.
+2024-11-26 13:44:40 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 13:44:40 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 13:44:40 - HHH000026: Second-level cache disabled
+2024-11-26 13:44:40 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 13:44:41 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 13:44:41 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 13:44:42 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 13:44:43 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 13:44:44 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 13:44:44 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 13:44:44 - Started TaskTrackerSchedulerApplication in 9.645 seconds (process running for 11.184)
+2024-11-26 14:27:47 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 14:27:47 - HikariPool-1 - Shutdown initiated...
+2024-11-26 14:27:47 - HikariPool-1 - Shutdown completed.
+2024-11-26 14:30:32 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 14:30:32 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 14:30:37 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 14:30:38 - Finished Spring Data repository scanning in 246 ms. Found 3 JPA repository interfaces.
+2024-11-26 14:30:39 - Tomcat initialized with port 8880 (http)
+2024-11-26 14:30:39 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 14:30:39 - Starting service [Tomcat]
+2024-11-26 14:30:39 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 14:30:39 - Initializing Spring embedded WebApplicationContext
+2024-11-26 14:30:39 - Root WebApplicationContext: initialization completed in 7207 ms
+2024-11-26 14:30:40 - HikariPool-1 - Starting...
+2024-11-26 14:30:40 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3887c7d7
+2024-11-26 14:30:40 - HikariPool-1 - Start completed.
+2024-11-26 14:30:40 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 14:30:41 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 14:30:41 - HHH000026: Second-level cache disabled
+2024-11-26 14:30:42 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 14:30:44 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 14:30:44 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 14:30:44 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 14:30:45 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 14:30:46 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 14:30:46 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 14:30:46 - Started TaskTrackerSchedulerApplication in 16.94 seconds (process running for 20.029)
+2024-11-26 14:35:00 - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = task-tracker-scheduler-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-11-26 14:35:00 - initializing Kafka metrics collector
+2024-11-26 14:35:00 - [Producer clientId=task-tracker-scheduler-producer-1] Instantiated an idempotent producer.
+2024-11-26 14:35:00 - Kafka version: 3.7.1
+2024-11-26 14:35:00 - Kafka commitId: e2494e6ffb89f828
+2024-11-26 14:35:00 - Kafka startTimeMs: 1732631700546
+2024-11-26 14:35:00 - [Producer clientId=task-tracker-scheduler-producer-1] Cluster ID: vqPRch3nRESW6QEWW423xw
+2024-11-26 14:35:00 - [Producer clientId=task-tracker-scheduler-producer-1] ProducerId set to 0 with epoch 0
+2024-11-26 14:44:01 - [Producer clientId=task-tracker-scheduler-producer-1] Node -1 disconnected.
+2024-11-26 14:52:56 - [Producer clientId=task-tracker-scheduler-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2024-11-26 14:52:56 - Metrics scheduler closed
+2024-11-26 14:52:56 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-11-26 14:52:56 - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-11-26 14:52:56 - Metrics reporters closed
+2024-11-26 14:52:56 - App info kafka.producer for task-tracker-scheduler-producer-1 unregistered
+2024-11-26 14:52:56 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 14:52:56 - HikariPool-1 - Shutdown initiated...
+2024-11-26 14:52:56 - HikariPool-1 - Shutdown completed.
+2024-11-26 14:54:16 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 14:54:16 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 14:54:19 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 14:54:20 - Finished Spring Data repository scanning in 304 ms. Found 3 JPA repository interfaces.
+2024-11-26 14:54:22 - Tomcat initialized with port 8880 (http)
+2024-11-26 14:54:22 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 14:54:22 - Starting service [Tomcat]
+2024-11-26 14:54:22 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 14:54:22 - Initializing Spring embedded WebApplicationContext
+2024-11-26 14:54:22 - Root WebApplicationContext: initialization completed in 5717 ms
+2024-11-26 14:54:23 - HikariPool-1 - Starting...
+2024-11-26 14:54:24 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7b96de8d
+2024-11-26 14:54:24 - HikariPool-1 - Start completed.
+2024-11-26 14:54:24 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 14:54:24 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 14:54:24 - HHH000026: Second-level cache disabled
+2024-11-26 14:54:25 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 14:54:26 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 14:54:26 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 14:54:26 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 14:54:28 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 14:54:28 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 14:54:28 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 14:54:28 - Started TaskTrackerSchedulerApplication in 14.698 seconds (process running for 17.535)
+2024-11-26 15:00:00 - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = task-tracker-scheduler-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-11-26 15:00:00 - initializing Kafka metrics collector
+2024-11-26 15:00:00 - [Producer clientId=task-tracker-scheduler-producer-1] Instantiated an idempotent producer.
+2024-11-26 15:00:00 - Kafka version: 3.7.1
+2024-11-26 15:00:00 - Kafka commitId: e2494e6ffb89f828
+2024-11-26 15:00:00 - Kafka startTimeMs: 1732633200607
+2024-11-26 15:00:00 - [Producer clientId=task-tracker-scheduler-producer-1] Cluster ID: T2t4zNWqQi-Wp-jwDV3bHA
+2024-11-26 15:00:01 - [Producer clientId=task-tracker-scheduler-producer-1] ProducerId set to 0 with epoch 0
+2024-11-26 15:00:43 - [Producer clientId=task-tracker-scheduler-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2024-11-26 15:00:43 - Metrics scheduler closed
+2024-11-26 15:00:43 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-11-26 15:00:43 - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-11-26 15:00:43 - Metrics reporters closed
+2024-11-26 15:00:43 - App info kafka.producer for task-tracker-scheduler-producer-1 unregistered
+2024-11-26 15:00:43 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 15:00:43 - HikariPool-1 - Shutdown initiated...
+2024-11-26 15:00:43 - HikariPool-1 - Shutdown completed.
+2024-11-26 15:01:28 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 15:01:28 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 15:01:32 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 15:01:32 - Finished Spring Data repository scanning in 219 ms. Found 3 JPA repository interfaces.
+2024-11-26 15:01:34 - Tomcat initialized with port 8880 (http)
+2024-11-26 15:01:34 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 15:01:34 - Starting service [Tomcat]
+2024-11-26 15:01:34 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 15:01:35 - Initializing Spring embedded WebApplicationContext
+2024-11-26 15:01:35 - Root WebApplicationContext: initialization completed in 6083 ms
+2024-11-26 15:01:35 - HikariPool-1 - Starting...
+2024-11-26 15:01:36 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@65da01f4
+2024-11-26 15:01:36 - HikariPool-1 - Start completed.
+2024-11-26 15:01:36 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 15:01:36 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 15:01:36 - HHH000026: Second-level cache disabled
+2024-11-26 15:01:36 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 15:01:38 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 15:01:38 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 15:01:39 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 15:01:40 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 15:01:41 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 15:01:41 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 15:01:41 - Started TaskTrackerSchedulerApplication in 14.208 seconds (process running for 16.734)
+2024-11-26 15:28:51 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 15:28:51 - HikariPool-1 - Shutdown initiated...
+2024-11-26 15:28:51 - HikariPool-1 - Shutdown completed.
+2024-11-26 15:30:15 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 15:30:15 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 15:30:18 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 15:30:18 - Finished Spring Data repository scanning in 273 ms. Found 3 JPA repository interfaces.
+2024-11-26 15:30:21 - Tomcat initialized with port 8880 (http)
+2024-11-26 15:30:22 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 15:30:22 - Starting service [Tomcat]
+2024-11-26 15:30:22 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 15:30:22 - Initializing Spring embedded WebApplicationContext
+2024-11-26 15:30:22 - Root WebApplicationContext: initialization completed in 6440 ms
+2024-11-26 15:30:23 - HikariPool-1 - Starting...
+2024-11-26 15:30:23 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@22f02996
+2024-11-26 15:30:23 - HikariPool-1 - Start completed.
+2024-11-26 15:30:23 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 15:30:24 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 15:30:24 - HHH000026: Second-level cache disabled
+2024-11-26 15:30:24 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 15:30:26 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 15:30:26 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 15:30:27 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 15:30:28 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 15:30:28 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 15:30:28 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 15:30:28 - Started TaskTrackerSchedulerApplication in 15.234 seconds (process running for 17.951)
+2024-11-26 16:15:26 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 16:15:26 - HikariPool-1 - Shutdown initiated...
+2024-11-26 16:15:26 - HikariPool-1 - Shutdown completed.
+2024-11-26 16:16:11 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 16:16:11 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 16:16:16 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 16:16:16 - Finished Spring Data repository scanning in 261 ms. Found 3 JPA repository interfaces.
+2024-11-26 16:16:18 - Tomcat initialized with port 8880 (http)
+2024-11-26 16:16:18 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 16:16:18 - Starting service [Tomcat]
+2024-11-26 16:16:18 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 16:16:18 - Initializing Spring embedded WebApplicationContext
+2024-11-26 16:16:18 - Root WebApplicationContext: initialization completed in 6229 ms
+2024-11-26 16:16:18 - HikariPool-1 - Starting...
+2024-11-26 16:16:18 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@119290b9
+2024-11-26 16:16:18 - HikariPool-1 - Start completed.
+2024-11-26 16:16:19 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 16:16:19 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 16:16:19 - HHH000026: Second-level cache disabled
+2024-11-26 16:16:20 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 16:16:22 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 16:16:22 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 16:16:23 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 16:16:23 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 16:16:24 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 16:16:24 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 16:16:24 - Started TaskTrackerSchedulerApplication in 15.73 seconds (process running for 18.669)
+2024-11-26 16:25:21 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 16:25:21 - HikariPool-1 - Shutdown initiated...
+2024-11-26 16:25:21 - HikariPool-1 - Shutdown completed.
+2024-11-26 16:26:48 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 16:26:48 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 16:26:51 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 16:26:51 - Finished Spring Data repository scanning in 116 ms. Found 3 JPA repository interfaces.
+2024-11-26 16:26:53 - Tomcat initialized with port 8880 (http)
+2024-11-26 16:26:54 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 16:26:54 - Starting service [Tomcat]
+2024-11-26 16:26:54 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 16:26:54 - Initializing Spring embedded WebApplicationContext
+2024-11-26 16:26:54 - Root WebApplicationContext: initialization completed in 5682 ms
+2024-11-26 16:26:55 - HikariPool-1 - Starting...
+2024-11-26 16:26:55 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5438fa43
+2024-11-26 16:26:55 - HikariPool-1 - Start completed.
+2024-11-26 16:26:56 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 16:26:56 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 16:26:56 - HHH000026: Second-level cache disabled
+2024-11-26 16:26:57 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 16:26:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 16:26:58 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 16:26:59 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 16:27:00 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 16:27:01 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 16:27:01 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 16:27:01 - Started TaskTrackerSchedulerApplication in 15.967 seconds (process running for 17.912)
+2024-11-26 16:30:00 - Sending In progress tasks statistic
+2024-11-26 16:30:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=1, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 16:30:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 1
+2024-11-26 16:30:00 - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = task-tracker-scheduler-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-11-26 16:30:00 - initializing Kafka metrics collector
+2024-11-26 16:30:00 - [Producer clientId=task-tracker-scheduler-producer-1] Instantiated an idempotent producer.
+2024-11-26 16:30:00 - Kafka version: 3.7.1
+2024-11-26 16:30:00 - Kafka commitId: e2494e6ffb89f828
+2024-11-26 16:30:00 - Kafka startTimeMs: 1732638600443
+2024-11-26 16:30:00 - [Producer clientId=task-tracker-scheduler-producer-1] Cluster ID: yXQDdopASnCxJiODczIdKw
+2024-11-26 16:30:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 16:30:00 - [Producer clientId=task-tracker-scheduler-producer-1] ProducerId set to 0 with epoch 0
+2024-11-26 16:35:00 - Sending In progress tasks statistic
+2024-11-26 16:35:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 16:35:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 16:35:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 16:36:32 - [Producer clientId=task-tracker-scheduler-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2024-11-26 16:36:32 - Metrics scheduler closed
+2024-11-26 16:36:32 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-11-26 16:36:32 - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-11-26 16:36:32 - Metrics reporters closed
+2024-11-26 16:36:32 - App info kafka.producer for task-tracker-scheduler-producer-1 unregistered
+2024-11-26 16:36:32 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 16:36:32 - HikariPool-1 - Shutdown initiated...
+2024-11-26 16:36:32 - HikariPool-1 - Shutdown completed.
+2024-11-26 16:36:48 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 16:36:48 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 16:36:50 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 16:36:50 - Finished Spring Data repository scanning in 140 ms. Found 3 JPA repository interfaces.
+2024-11-26 16:36:52 - Tomcat initialized with port 8880 (http)
+2024-11-26 16:36:52 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 16:36:52 - Starting service [Tomcat]
+2024-11-26 16:36:52 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 16:36:52 - Initializing Spring embedded WebApplicationContext
+2024-11-26 16:36:52 - Root WebApplicationContext: initialization completed in 3633 ms
+2024-11-26 16:36:52 - HikariPool-1 - Starting...
+2024-11-26 16:36:53 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1bd8afc8
+2024-11-26 16:36:53 - HikariPool-1 - Start completed.
+2024-11-26 16:36:53 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 16:36:53 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 16:36:53 - HHH000026: Second-level cache disabled
+2024-11-26 16:36:54 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 16:36:55 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 16:36:55 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 16:36:55 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 16:36:56 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 16:36:56 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 16:36:56 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 16:36:57 - Started TaskTrackerSchedulerApplication in 10.131 seconds (process running for 11.727)
+2024-11-26 16:40:00 - Sending In progress tasks statistic
+2024-11-26 16:40:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 16:40:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 16:40:00 - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = task-tracker-scheduler-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-11-26 16:40:00 - initializing Kafka metrics collector
+2024-11-26 16:40:00 - [Producer clientId=task-tracker-scheduler-producer-1] Instantiated an idempotent producer.
+2024-11-26 16:40:00 - Kafka version: 3.7.1
+2024-11-26 16:40:00 - Kafka commitId: e2494e6ffb89f828
+2024-11-26 16:40:00 - Kafka startTimeMs: 1732639200404
+2024-11-26 16:40:00 - [Producer clientId=task-tracker-scheduler-producer-1] Cluster ID: RE2pNtxeR4qV67_cqLU_zg
+2024-11-26 16:40:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 16:40:00 - [Producer clientId=task-tracker-scheduler-producer-1] ProducerId set to 0 with epoch 0
+2024-11-26 16:45:00 - Sending In progress tasks statistic
+2024-11-26 16:45:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 16:45:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 16:45:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 16:47:37 - [Producer clientId=task-tracker-scheduler-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2024-11-26 16:47:37 - Metrics scheduler closed
+2024-11-26 16:47:37 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-11-26 16:47:37 - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-11-26 16:47:37 - Metrics reporters closed
+2024-11-26 16:47:37 - App info kafka.producer for task-tracker-scheduler-producer-1 unregistered
+2024-11-26 16:47:37 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 16:47:37 - HikariPool-1 - Shutdown initiated...
+2024-11-26 16:47:37 - HikariPool-1 - Shutdown completed.
+2024-11-26 16:48:23 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 16:48:23 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 16:48:26 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 16:48:27 - Finished Spring Data repository scanning in 271 ms. Found 3 JPA repository interfaces.
+2024-11-26 16:48:29 - Tomcat initialized with port 8880 (http)
+2024-11-26 16:48:29 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 16:48:29 - Starting service [Tomcat]
+2024-11-26 16:48:29 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 16:48:29 - Initializing Spring embedded WebApplicationContext
+2024-11-26 16:48:29 - Root WebApplicationContext: initialization completed in 6481 ms
+2024-11-26 16:48:30 - HikariPool-1 - Starting...
+2024-11-26 16:48:30 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@62cbc478
+2024-11-26 16:48:30 - HikariPool-1 - Start completed.
+2024-11-26 16:48:30 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 16:48:30 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 16:48:30 - HHH000026: Second-level cache disabled
+2024-11-26 16:48:31 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 16:48:33 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 16:48:33 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 16:48:34 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 16:48:34 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 16:48:35 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 16:48:35 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 16:48:35 - Started TaskTrackerSchedulerApplication in 14.007 seconds (process running for 17.422)
+2024-11-26 16:50:00 - Sending In progress tasks statistic
+2024-11-26 16:50:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 16:50:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 16:50:00 - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = task-tracker-scheduler-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-11-26 16:50:00 - initializing Kafka metrics collector
+2024-11-26 16:50:00 - [Producer clientId=task-tracker-scheduler-producer-1] Instantiated an idempotent producer.
+2024-11-26 16:50:00 - Kafka version: 3.7.1
+2024-11-26 16:50:00 - Kafka commitId: e2494e6ffb89f828
+2024-11-26 16:50:00 - Kafka startTimeMs: 1732639800428
+2024-11-26 16:50:00 - [Producer clientId=task-tracker-scheduler-producer-1] Cluster ID: qSmBJ0snRj2P7uMwjl5B7w
+2024-11-26 16:50:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 16:50:00 - [Producer clientId=task-tracker-scheduler-producer-1] ProducerId set to 0 with epoch 0
+2024-11-26 16:55:00 - Sending In progress tasks statistic
+2024-11-26 16:55:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 16:55:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 16:55:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 16:55:22 - [Producer clientId=task-tracker-scheduler-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2024-11-26 16:55:22 - Metrics scheduler closed
+2024-11-26 16:55:22 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-11-26 16:55:22 - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-11-26 16:55:22 - Metrics reporters closed
+2024-11-26 16:55:22 - App info kafka.producer for task-tracker-scheduler-producer-1 unregistered
+2024-11-26 16:55:22 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 16:55:22 - HikariPool-1 - Shutdown initiated...
+2024-11-26 16:55:22 - HikariPool-1 - Shutdown completed.
+2024-11-26 16:56:06 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 16:56:06 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 16:56:10 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 16:56:10 - Finished Spring Data repository scanning in 260 ms. Found 3 JPA repository interfaces.
+2024-11-26 16:56:13 - Tomcat initialized with port 8880 (http)
+2024-11-26 16:56:13 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 16:56:13 - Starting service [Tomcat]
+2024-11-26 16:56:13 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 16:56:13 - Initializing Spring embedded WebApplicationContext
+2024-11-26 16:56:13 - Root WebApplicationContext: initialization completed in 5994 ms
+2024-11-26 16:56:13 - HikariPool-1 - Starting...
+2024-11-26 16:56:13 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3887c7d7
+2024-11-26 16:56:13 - HikariPool-1 - Start completed.
+2024-11-26 16:56:13 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 16:56:14 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 16:56:14 - HHH000026: Second-level cache disabled
+2024-11-26 16:56:14 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 16:56:16 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 16:56:16 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 16:56:17 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 16:56:17 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 16:56:18 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 16:56:18 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 16:56:18 - Started TaskTrackerSchedulerApplication in 13.392 seconds (process running for 16.23)
+2024-11-26 16:58:37 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 16:58:37 - HikariPool-1 - Shutdown initiated...
+2024-11-26 16:58:37 - HikariPool-1 - Shutdown completed.
+2024-11-26 16:59:18 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 16:59:18 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 16:59:22 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 16:59:22 - Finished Spring Data repository scanning in 336 ms. Found 3 JPA repository interfaces.
+2024-11-26 16:59:24 - Tomcat initialized with port 8880 (http)
+2024-11-26 16:59:24 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 16:59:24 - Starting service [Tomcat]
+2024-11-26 16:59:24 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 16:59:25 - Initializing Spring embedded WebApplicationContext
+2024-11-26 16:59:25 - Root WebApplicationContext: initialization completed in 6171 ms
+2024-11-26 16:59:25 - HikariPool-1 - Starting...
+2024-11-26 16:59:26 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@640d604
+2024-11-26 16:59:26 - HikariPool-1 - Start completed.
+2024-11-26 16:59:26 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 16:59:26 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 16:59:26 - HHH000026: Second-level cache disabled
+2024-11-26 16:59:26 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 16:59:28 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 16:59:28 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 16:59:29 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 16:59:30 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 16:59:30 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 16:59:30 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 16:59:30 - Started TaskTrackerSchedulerApplication in 13.585 seconds (process running for 16.581)
+2024-11-26 17:00:00 - Sending In progress tasks statistic
+2024-11-26 17:00:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:00:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 17:00:00 - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = task-tracker-scheduler-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-11-26 17:00:00 - initializing Kafka metrics collector
+2024-11-26 17:00:00 - [Producer clientId=task-tracker-scheduler-producer-1] Instantiated an idempotent producer.
+2024-11-26 17:00:00 - Kafka version: 3.7.1
+2024-11-26 17:00:00 - Kafka commitId: e2494e6ffb89f828
+2024-11-26 17:00:00 - Kafka startTimeMs: 1732640400415
+2024-11-26 17:00:00 - [Producer clientId=task-tracker-scheduler-producer-1] Cluster ID: vj4wCVoaTl6oWqD_nk9xpQ
+2024-11-26 17:00:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 17:00:00 - Sending In progress tasks statistic
+2024-11-26 17:00:00 - StatisticDto 'StatisticDto(email=copytrelloteam@gmail.com, countUnFinishedTasks=1, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:00:00 - Preparing to send unfinished tasks email to 'copytrelloteam@gmail.com'. Number of tasks: 1
+2024-11-26 17:00:00 - Unfinished tasks email sent successfully to 'copytrelloteam@gmail.com'.
+2024-11-26 17:00:00 - [Producer clientId=task-tracker-scheduler-producer-1] ProducerId set to 0 with epoch 0
+2024-11-26 17:05:00 - Sending In progress tasks statistic
+2024-11-26 17:05:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:05:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 17:05:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 17:05:00 - Sending In progress tasks statistic
+2024-11-26 17:05:00 - StatisticDto 'StatisticDto(email=copytrelloteam@gmail.com, countUnFinishedTasks=1, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:05:00 - Preparing to send unfinished tasks email to 'copytrelloteam@gmail.com'. Number of tasks: 1
+2024-11-26 17:05:00 - Unfinished tasks email sent successfully to 'copytrelloteam@gmail.com'.
+2024-11-26 17:07:30 - [Producer clientId=task-tracker-scheduler-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2024-11-26 17:07:30 - Metrics scheduler closed
+2024-11-26 17:07:30 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-11-26 17:07:30 - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-11-26 17:07:30 - Metrics reporters closed
+2024-11-26 17:07:30 - App info kafka.producer for task-tracker-scheduler-producer-1 unregistered
+2024-11-26 17:07:30 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 17:07:30 - HikariPool-1 - Shutdown initiated...
+2024-11-26 17:07:30 - HikariPool-1 - Shutdown completed.
+2024-11-26 17:08:23 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 17:08:23 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 17:08:27 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 17:08:27 - Finished Spring Data repository scanning in 215 ms. Found 3 JPA repository interfaces.
+2024-11-26 17:08:29 - Tomcat initialized with port 8880 (http)
+2024-11-26 17:08:29 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 17:08:29 - Starting service [Tomcat]
+2024-11-26 17:08:29 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 17:08:29 - Initializing Spring embedded WebApplicationContext
+2024-11-26 17:08:29 - Root WebApplicationContext: initialization completed in 5812 ms
+2024-11-26 17:08:29 - HikariPool-1 - Starting...
+2024-11-26 17:08:30 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@42c0a16e
+2024-11-26 17:08:30 - HikariPool-1 - Start completed.
+2024-11-26 17:08:30 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 17:08:30 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 17:08:30 - HHH000026: Second-level cache disabled
+2024-11-26 17:08:31 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 17:08:33 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 17:08:33 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 17:08:34 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 17:08:34 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 17:08:35 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 17:08:35 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 17:08:35 - Started TaskTrackerSchedulerApplication in 15.25 seconds (process running for 17.723)
+2024-11-26 17:10:00 - Sending In progress tasks statistic
+2024-11-26 17:10:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:10:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 17:10:00 - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = task-tracker-scheduler-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-11-26 17:10:00 - initializing Kafka metrics collector
+2024-11-26 17:10:00 - [Producer clientId=task-tracker-scheduler-producer-1] Instantiated an idempotent producer.
+2024-11-26 17:10:00 - Kafka version: 3.7.1
+2024-11-26 17:10:00 - Kafka commitId: e2494e6ffb89f828
+2024-11-26 17:10:00 - Kafka startTimeMs: 1732641000453
+2024-11-26 17:10:00 - [Producer clientId=task-tracker-scheduler-producer-1] Cluster ID: S5vmwMnNTRi9QX_qyptNFA
+2024-11-26 17:10:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 17:10:00 - Sending In progress tasks statistic
+2024-11-26 17:10:00 - StatisticDto 'StatisticDto(email=copytrelloteam@gmail.com, countUnFinishedTasks=1, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:10:00 - Preparing to send unfinished tasks email to 'copytrelloteam@gmail.com'. Number of tasks: 1
+2024-11-26 17:10:00 - Unfinished tasks email sent successfully to 'copytrelloteam@gmail.com'.
+2024-11-26 17:10:00 - [Producer clientId=task-tracker-scheduler-producer-1] ProducerId set to 0 with epoch 0
+2024-11-26 17:11:07 - [Producer clientId=task-tracker-scheduler-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2024-11-26 17:11:07 - Metrics scheduler closed
+2024-11-26 17:11:07 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-11-26 17:11:07 - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-11-26 17:11:07 - Metrics reporters closed
+2024-11-26 17:11:07 - App info kafka.producer for task-tracker-scheduler-producer-1 unregistered
+2024-11-26 17:11:07 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 17:11:07 - HikariPool-1 - Shutdown initiated...
+2024-11-26 17:11:07 - HikariPool-1 - Shutdown completed.
+2024-11-26 17:11:55 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 17:11:55 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 17:11:58 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 17:11:58 - Finished Spring Data repository scanning in 191 ms. Found 3 JPA repository interfaces.
+2024-11-26 17:12:00 - Tomcat initialized with port 8880 (http)
+2024-11-26 17:12:01 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 17:12:01 - Starting service [Tomcat]
+2024-11-26 17:12:01 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 17:12:01 - Initializing Spring embedded WebApplicationContext
+2024-11-26 17:12:01 - Root WebApplicationContext: initialization completed in 5360 ms
+2024-11-26 17:12:01 - HikariPool-1 - Starting...
+2024-11-26 17:12:02 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@62cbc478
+2024-11-26 17:12:02 - HikariPool-1 - Start completed.
+2024-11-26 17:12:02 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 17:12:02 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 17:12:02 - HHH000026: Second-level cache disabled
+2024-11-26 17:12:03 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 17:12:04 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 17:12:04 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 17:12:06 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 17:12:07 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 17:12:07 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 17:12:07 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 17:12:07 - Started TaskTrackerSchedulerApplication in 14.424 seconds (process running for 17.44)
+2024-11-26 17:15:00 - Sending In progress tasks statistic
+2024-11-26 17:15:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:15:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 17:15:00 - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = task-tracker-scheduler-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-11-26 17:15:00 - initializing Kafka metrics collector
+2024-11-26 17:15:00 - [Producer clientId=task-tracker-scheduler-producer-1] Instantiated an idempotent producer.
+2024-11-26 17:15:00 - Kafka version: 3.7.1
+2024-11-26 17:15:00 - Kafka commitId: e2494e6ffb89f828
+2024-11-26 17:15:00 - Kafka startTimeMs: 1732641300547
+2024-11-26 17:15:00 - [Producer clientId=task-tracker-scheduler-producer-1] Cluster ID: H1iiU5PZQmalfK7SaWVOMg
+2024-11-26 17:15:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 17:15:00 - Sending In progress tasks statistic
+2024-11-26 17:15:00 - StatisticDto 'StatisticDto(email=copytrelloteam@gmail.com, countUnFinishedTasks=1, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:15:00 - Preparing to send unfinished tasks email to 'copytrelloteam@gmail.com'. Number of tasks: 1
+2024-11-26 17:15:00 - Unfinished tasks email sent successfully to 'copytrelloteam@gmail.com'.
+2024-11-26 17:15:00 - [Producer clientId=task-tracker-scheduler-producer-1] ProducerId set to 0 with epoch 0
+2024-11-26 17:20:00 - Sending In progress tasks statistic
+2024-11-26 17:20:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:20:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 17:20:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 17:20:00 - Sending In progress tasks statistic
+2024-11-26 17:20:00 - StatisticDto 'StatisticDto(email=copytrelloteam@gmail.com, countUnFinishedTasks=1, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:20:00 - Preparing to send unfinished tasks email to 'copytrelloteam@gmail.com'. Number of tasks: 1
+2024-11-26 17:20:00 - Unfinished tasks email sent successfully to 'copytrelloteam@gmail.com'.
+2024-11-26 17:24:01 - [Producer clientId=task-tracker-scheduler-producer-1] Node -1 disconnected.
+2024-11-26 17:25:00 - Sending In progress tasks statistic
+2024-11-26 17:25:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:25:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 17:25:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 17:25:00 - Sending In progress tasks statistic
+2024-11-26 17:25:00 - StatisticDto 'StatisticDto(email=copytrelloteam@gmail.com, countUnFinishedTasks=1, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:25:00 - Preparing to send unfinished tasks email to 'copytrelloteam@gmail.com'. Number of tasks: 1
+2024-11-26 17:25:00 - Unfinished tasks email sent successfully to 'copytrelloteam@gmail.com'.
+2024-11-26 17:30:00 - Sending In progress tasks statistic
+2024-11-26 17:30:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:30:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 17:30:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 17:30:00 - Sending In progress tasks statistic
+2024-11-26 17:30:00 - StatisticDto 'StatisticDto(email=copytrelloteam@gmail.com, countUnFinishedTasks=1, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:30:00 - Preparing to send unfinished tasks email to 'copytrelloteam@gmail.com'. Number of tasks: 1
+2024-11-26 17:30:00 - Unfinished tasks email sent successfully to 'copytrelloteam@gmail.com'.
+2024-11-26 17:34:00 - [Producer clientId=task-tracker-scheduler-producer-1] Node -1 disconnected.
+2024-11-26 17:35:00 - Sending In progress tasks statistic
+2024-11-26 17:35:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:35:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 17:35:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 17:35:00 - Sending In progress tasks statistic
+2024-11-26 17:35:00 - StatisticDto 'StatisticDto(email=copytrelloteam@gmail.com, countUnFinishedTasks=1, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:35:00 - Preparing to send unfinished tasks email to 'copytrelloteam@gmail.com'. Number of tasks: 1
+2024-11-26 17:35:00 - Unfinished tasks email sent successfully to 'copytrelloteam@gmail.com'.
+2024-11-26 17:38:11 - [Producer clientId=task-tracker-scheduler-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2024-11-26 17:38:11 - Metrics scheduler closed
+2024-11-26 17:38:11 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-11-26 17:38:11 - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-11-26 17:38:11 - Metrics reporters closed
+2024-11-26 17:38:11 - App info kafka.producer for task-tracker-scheduler-producer-1 unregistered
+2024-11-26 17:38:11 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 17:38:11 - HikariPool-1 - Shutdown initiated...
+2024-11-26 17:38:11 - HikariPool-1 - Shutdown completed.
+2024-11-26 17:39:18 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 17:39:18 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 17:39:22 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 17:39:22 - Finished Spring Data repository scanning in 235 ms. Found 3 JPA repository interfaces.
+2024-11-26 17:39:24 - Tomcat initialized with port 8880 (http)
+2024-11-26 17:39:24 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 17:39:24 - Starting service [Tomcat]
+2024-11-26 17:39:24 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 17:39:24 - Initializing Spring embedded WebApplicationContext
+2024-11-26 17:39:24 - Root WebApplicationContext: initialization completed in 6122 ms
+2024-11-26 17:39:25 - HikariPool-1 - Starting...
+2024-11-26 17:39:25 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@512abf25
+2024-11-26 17:39:25 - HikariPool-1 - Start completed.
+2024-11-26 17:39:25 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 17:39:25 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 17:39:25 - HHH000026: Second-level cache disabled
+2024-11-26 17:39:26 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 17:39:28 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 17:39:28 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 17:39:28 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 17:39:30 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 17:39:30 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 17:39:30 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 17:39:30 - Started TaskTrackerSchedulerApplication in 13.417 seconds (process running for 16.123)
+2024-11-26 17:40:00 - Sending In progress tasks statistic
+2024-11-26 17:40:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:40:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 17:40:00 - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = task-tracker-scheduler-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-11-26 17:40:00 - initializing Kafka metrics collector
+2024-11-26 17:40:00 - [Producer clientId=task-tracker-scheduler-producer-1] Instantiated an idempotent producer.
+2024-11-26 17:40:00 - Kafka version: 3.7.1
+2024-11-26 17:40:00 - Kafka commitId: e2494e6ffb89f828
+2024-11-26 17:40:00 - Kafka startTimeMs: 1732642800887
+2024-11-26 17:40:01 - [Producer clientId=task-tracker-scheduler-producer-1] Cluster ID: ofxSrKGTRMSk4a-oGPFLQg
+2024-11-26 17:40:01 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 17:40:01 - Sending In progress tasks statistic
+2024-11-26 17:40:01 - StatisticDto 'StatisticDto(email=copytrelloteam@gmail.com, countUnFinishedTasks=1, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:40:01 - Preparing to send unfinished tasks email to 'copytrelloteam@gmail.com'. Number of tasks: 1
+2024-11-26 17:40:01 - Unfinished tasks email sent successfully to 'copytrelloteam@gmail.com'.
+2024-11-26 17:40:01 - [Producer clientId=task-tracker-scheduler-producer-1] ProducerId set to 0 with epoch 0
+2024-11-26 17:43:22 - [Producer clientId=task-tracker-scheduler-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2024-11-26 17:43:22 - Metrics scheduler closed
+2024-11-26 17:43:22 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-11-26 17:43:22 - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-11-26 17:43:22 - Metrics reporters closed
+2024-11-26 17:43:22 - App info kafka.producer for task-tracker-scheduler-producer-1 unregistered
+2024-11-26 17:43:22 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 17:43:22 - HikariPool-1 - Shutdown initiated...
+2024-11-26 17:43:22 - HikariPool-1 - Shutdown completed.
+2024-11-26 17:44:51 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 17:44:51 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 17:44:54 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 17:44:55 - Finished Spring Data repository scanning in 346 ms. Found 3 JPA repository interfaces.
+2024-11-26 17:44:57 - Tomcat initialized with port 8880 (http)
+2024-11-26 17:44:57 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 17:44:57 - Starting service [Tomcat]
+2024-11-26 17:44:57 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 17:44:58 - Initializing Spring embedded WebApplicationContext
+2024-11-26 17:44:58 - Root WebApplicationContext: initialization completed in 6165 ms
+2024-11-26 17:44:59 - HikariPool-1 - Starting...
+2024-11-26 17:44:59 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1fb2eec
+2024-11-26 17:45:00 - HikariPool-1 - Start completed.
+2024-11-26 17:45:00 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 17:45:00 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 17:45:00 - HHH000026: Second-level cache disabled
+2024-11-26 17:45:01 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 17:45:03 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 17:45:03 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 17:45:04 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 17:45:05 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 17:45:06 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 17:45:06 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 17:45:06 - Started TaskTrackerSchedulerApplication in 17.14 seconds (process running for 20.59)
+2024-11-26 17:50:00 - Sending In progress tasks statistic
+2024-11-26 17:50:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:50:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 17:50:00 - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = task-tracker-scheduler-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-11-26 17:50:00 - initializing Kafka metrics collector
+2024-11-26 17:50:00 - [Producer clientId=task-tracker-scheduler-producer-1] Instantiated an idempotent producer.
+2024-11-26 17:50:00 - Kafka version: 3.7.1
+2024-11-26 17:50:00 - Kafka commitId: e2494e6ffb89f828
+2024-11-26 17:50:00 - Kafka startTimeMs: 1732643400405
+2024-11-26 17:50:00 - [Producer clientId=task-tracker-scheduler-producer-1] Cluster ID: 5oLngPOlRCWt-F8lKfy2dA
+2024-11-26 17:50:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 17:50:00 - Sending In progress tasks statistic
+2024-11-26 17:50:00 - StatisticDto 'StatisticDto(email=copytrelloteam@gmail.com, countUnFinishedTasks=1, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 17:50:00 - Preparing to send unfinished tasks email to 'copytrelloteam@gmail.com'. Number of tasks: 1
+2024-11-26 17:50:00 - Unfinished tasks email sent successfully to 'copytrelloteam@gmail.com'.
+2024-11-26 17:50:00 - [Producer clientId=task-tracker-scheduler-producer-1] ProducerId set to 0 with epoch 0
+2024-11-26 17:50:13 - [Producer clientId=task-tracker-scheduler-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2024-11-26 17:50:13 - Metrics scheduler closed
+2024-11-26 17:50:13 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-11-26 17:50:13 - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-11-26 17:50:13 - Metrics reporters closed
+2024-11-26 17:50:13 - App info kafka.producer for task-tracker-scheduler-producer-1 unregistered
+2024-11-26 17:50:13 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 17:50:13 - HikariPool-1 - Shutdown initiated...
+2024-11-26 17:50:13 - HikariPool-1 - Shutdown completed.
+2024-11-26 17:52:34 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 17:52:34 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 17:52:37 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 17:52:37 - Finished Spring Data repository scanning in 149 ms. Found 3 JPA repository interfaces.
+2024-11-26 17:52:39 - Tomcat initialized with port 8880 (http)
+2024-11-26 17:52:39 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 17:52:39 - Starting service [Tomcat]
+2024-11-26 17:52:39 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 17:52:39 - Initializing Spring embedded WebApplicationContext
+2024-11-26 17:52:39 - Root WebApplicationContext: initialization completed in 4081 ms
+2024-11-26 17:52:39 - HikariPool-1 - Starting...
+2024-11-26 17:52:40 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6544899b
+2024-11-26 17:52:40 - HikariPool-1 - Start completed.
+2024-11-26 17:52:40 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 17:52:40 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 17:52:40 - HHH000026: Second-level cache disabled
+2024-11-26 17:52:41 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 17:52:42 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 17:52:42 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 17:52:43 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 17:52:44 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 17:52:44 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 17:52:44 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 17:52:44 - Started TaskTrackerSchedulerApplication in 11.924 seconds (process running for 13.573)
+2024-11-26 17:53:54 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 17:53:54 - HikariPool-1 - Shutdown initiated...
+2024-11-26 17:53:54 - HikariPool-1 - Shutdown completed.
+2024-11-26 17:56:47 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 17:56:47 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 17:56:49 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 17:56:50 - Finished Spring Data repository scanning in 253 ms. Found 3 JPA repository interfaces.
+2024-11-26 17:56:51 - Tomcat initialized with port 8880 (http)
+2024-11-26 17:56:51 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 17:56:51 - Starting service [Tomcat]
+2024-11-26 17:56:51 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 17:56:51 - Initializing Spring embedded WebApplicationContext
+2024-11-26 17:56:52 - Root WebApplicationContext: initialization completed in 4545 ms
+2024-11-26 17:56:52 - HikariPool-1 - Starting...
+2024-11-26 17:56:53 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@515ab3f2
+2024-11-26 17:56:53 - HikariPool-1 - Start completed.
+2024-11-26 17:56:53 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 17:56:53 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 17:56:53 - HHH000026: Second-level cache disabled
+2024-11-26 17:56:54 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 17:56:55 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 17:56:55 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 17:56:56 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 17:56:57 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 17:56:57 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 17:56:57 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 17:56:57 - Started TaskTrackerSchedulerApplication in 12.958 seconds (process running for 14.833)
+2024-11-26 17:58:00 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 17:58:00 - HikariPool-1 - Shutdown initiated...
+2024-11-26 17:58:00 - HikariPool-1 - Shutdown completed.
+2024-11-26 17:58:20 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 17:58:20 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 17:58:22 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 17:58:22 - Finished Spring Data repository scanning in 183 ms. Found 3 JPA repository interfaces.
+2024-11-26 17:58:24 - Tomcat initialized with port 8880 (http)
+2024-11-26 17:58:24 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 17:58:24 - Starting service [Tomcat]
+2024-11-26 17:58:24 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 17:58:25 - Initializing Spring embedded WebApplicationContext
+2024-11-26 17:58:25 - Root WebApplicationContext: initialization completed in 4447 ms
+2024-11-26 17:58:25 - HikariPool-1 - Starting...
+2024-11-26 17:58:25 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@515ab3f2
+2024-11-26 17:58:26 - HikariPool-1 - Start completed.
+2024-11-26 17:58:26 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 17:58:26 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 17:58:26 - HHH000026: Second-level cache disabled
+2024-11-26 17:58:27 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 17:58:28 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 17:58:28 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 17:58:28 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 17:58:29 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 17:58:30 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 17:58:30 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 17:58:30 - Started TaskTrackerSchedulerApplication in 11.7 seconds (process running for 13.942)
+2024-11-26 17:59:37 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 17:59:37 - HikariPool-1 - Shutdown initiated...
+2024-11-26 17:59:37 - HikariPool-1 - Shutdown completed.
+2024-11-26 18:00:00 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 18:00:00 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 18:00:02 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 18:00:03 - Finished Spring Data repository scanning in 288 ms. Found 3 JPA repository interfaces.
+2024-11-26 18:00:05 - Tomcat initialized with port 8880 (http)
+2024-11-26 18:00:05 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 18:00:05 - Starting service [Tomcat]
+2024-11-26 18:00:05 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 18:00:06 - Initializing Spring embedded WebApplicationContext
+2024-11-26 18:00:06 - Root WebApplicationContext: initialization completed in 5523 ms
+2024-11-26 18:00:06 - HikariPool-1 - Starting...
+2024-11-26 18:00:06 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@640d604
+2024-11-26 18:00:06 - HikariPool-1 - Start completed.
+2024-11-26 18:00:06 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 18:00:06 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 18:00:07 - HHH000026: Second-level cache disabled
+2024-11-26 18:00:08 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 18:00:09 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 18:00:09 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 18:00:10 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 18:00:10 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 18:00:11 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 18:00:11 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 18:00:11 - Started TaskTrackerSchedulerApplication in 13.896 seconds (process running for 16.134)
+2024-11-26 18:00:20 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 18:00:20 - HikariPool-1 - Shutdown initiated...
+2024-11-26 18:00:20 - HikariPool-1 - Shutdown completed.
+2024-11-26 18:00:54 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 18:00:54 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 18:00:57 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 18:00:57 - Finished Spring Data repository scanning in 138 ms. Found 3 JPA repository interfaces.
+2024-11-26 18:00:59 - Tomcat initialized with port 8880 (http)
+2024-11-26 18:00:59 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 18:00:59 - Starting service [Tomcat]
+2024-11-26 18:00:59 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 18:00:59 - Initializing Spring embedded WebApplicationContext
+2024-11-26 18:00:59 - Root WebApplicationContext: initialization completed in 4117 ms
+2024-11-26 18:00:59 - HikariPool-1 - Starting...
+2024-11-26 18:01:00 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@515ab3f2
+2024-11-26 18:01:00 - HikariPool-1 - Start completed.
+2024-11-26 18:01:00 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 18:01:00 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 18:01:00 - HHH000026: Second-level cache disabled
+2024-11-26 18:01:01 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 18:01:03 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 18:01:03 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 18:01:04 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 18:01:05 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 18:01:05 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 18:01:05 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 18:01:05 - Started TaskTrackerSchedulerApplication in 13.287 seconds (process running for 15.291)
+2024-11-26 18:01:53 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 18:01:53 - HikariPool-1 - Shutdown initiated...
+2024-11-26 18:01:53 - HikariPool-1 - Shutdown completed.
+2024-11-26 18:02:11 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 18:02:11 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 18:02:14 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 18:02:14 - Finished Spring Data repository scanning in 345 ms. Found 3 JPA repository interfaces.
+2024-11-26 18:02:16 - Tomcat initialized with port 8880 (http)
+2024-11-26 18:02:16 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 18:02:16 - Starting service [Tomcat]
+2024-11-26 18:02:16 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 18:02:16 - Initializing Spring embedded WebApplicationContext
+2024-11-26 18:02:16 - Root WebApplicationContext: initialization completed in 5109 ms
+2024-11-26 18:02:17 - HikariPool-1 - Starting...
+2024-11-26 18:02:18 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@b1b471
+2024-11-26 18:02:18 - HikariPool-1 - Start completed.
+2024-11-26 18:02:18 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 18:02:19 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 18:02:19 - HHH000026: Second-level cache disabled
+2024-11-26 18:02:20 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 18:02:22 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 18:02:22 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 18:02:23 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 18:02:24 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 18:02:25 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 18:02:25 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 18:02:25 - Started TaskTrackerSchedulerApplication in 16.275 seconds (process running for 18.073)
+2024-11-26 18:02:45 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 18:02:45 - HikariPool-1 - Shutdown initiated...
+2024-11-26 18:02:45 - HikariPool-1 - Shutdown completed.
+2024-11-26 18:03:04 - Starting TaskTrackerSchedulerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app.jar started by app-user in /)
+2024-11-26 18:03:04 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 18:03:06 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 18:03:07 - Finished Spring Data repository scanning in 146 ms. Found 3 JPA repository interfaces.
+2024-11-26 18:03:09 - Tomcat initialized with port 8880 (http)
+2024-11-26 18:03:09 - Initializing ProtocolHandler ["http-nio-8880"]
+2024-11-26 18:03:09 - Starting service [Tomcat]
+2024-11-26 18:03:09 - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-26 18:03:09 - Initializing Spring embedded WebApplicationContext
+2024-11-26 18:03:09 - Root WebApplicationContext: initialization completed in 4345 ms
+2024-11-26 18:03:09 - HikariPool-1 - Starting...
+2024-11-26 18:03:10 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@76396509
+2024-11-26 18:03:10 - HikariPool-1 - Start completed.
+2024-11-26 18:03:10 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 18:03:10 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 18:03:10 - HHH000026: Second-level cache disabled
+2024-11-26 18:03:11 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 18:03:12 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 18:03:12 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 18:03:13 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-26 18:03:13 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 18:03:14 - Starting ProtocolHandler ["http-nio-8880"]
+2024-11-26 18:03:14 - Tomcat started on port 8880 (http) with context path '/'
+2024-11-26 18:03:14 - Started TaskTrackerSchedulerApplication in 12.038 seconds (process running for 13.957)
+2024-11-26 18:05:00 - Sending In progress tasks statistic
+2024-11-26 18:05:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 18:05:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 18:05:00 - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = task-tracker-scheduler-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-11-26 18:05:00 - initializing Kafka metrics collector
+2024-11-26 18:05:00 - [Producer clientId=task-tracker-scheduler-producer-1] Instantiated an idempotent producer.
+2024-11-26 18:05:00 - Kafka version: 3.7.1
+2024-11-26 18:05:00 - Kafka commitId: e2494e6ffb89f828
+2024-11-26 18:05:00 - Kafka startTimeMs: 1732644300466
+2024-11-26 18:05:00 - [Producer clientId=task-tracker-scheduler-producer-1] Cluster ID: SEuP4YGOR2-SmxKAuML7NQ
+2024-11-26 18:05:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 18:05:00 - Sending In progress tasks statistic
+2024-11-26 18:05:00 - StatisticDto 'StatisticDto(email=copytrelloteam@gmail.com, countUnFinishedTasks=1, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 18:05:00 - Preparing to send unfinished tasks email to 'copytrelloteam@gmail.com'. Number of tasks: 1
+2024-11-26 18:05:00 - Unfinished tasks email sent successfully to 'copytrelloteam@gmail.com'.
+2024-11-26 18:05:00 - [Producer clientId=task-tracker-scheduler-producer-1] ProducerId set to 0 with epoch 0
+2024-11-26 18:10:00 - Sending In progress tasks statistic
+2024-11-26 18:10:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 18:10:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 18:10:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 18:10:00 - Sending In progress tasks statistic
+2024-11-26 18:10:00 - StatisticDto 'StatisticDto(email=copytrelloteam@gmail.com, countUnFinishedTasks=1, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 18:10:00 - Preparing to send unfinished tasks email to 'copytrelloteam@gmail.com'. Number of tasks: 1
+2024-11-26 18:10:00 - Unfinished tasks email sent successfully to 'copytrelloteam@gmail.com'.
+2024-11-26 18:14:00 - [Producer clientId=task-tracker-scheduler-producer-1] Node -1 disconnected.
+2024-11-26 18:15:00 - Sending In progress tasks statistic
+2024-11-26 18:15:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 18:15:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 18:15:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 18:15:00 - Sending In progress tasks statistic
+2024-11-26 18:15:00 - StatisticDto 'StatisticDto(email=copytrelloteam@gmail.com, countUnFinishedTasks=1, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 18:15:00 - Preparing to send unfinished tasks email to 'copytrelloteam@gmail.com'. Number of tasks: 1
+2024-11-26 18:15:00 - Unfinished tasks email sent successfully to 'copytrelloteam@gmail.com'.
+2024-11-26 18:20:00 - Sending In progress tasks statistic
+2024-11-26 18:20:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 18:20:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 18:20:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 18:20:00 - Sending In progress tasks statistic
+2024-11-26 18:20:00 - StatisticDto 'StatisticDto(email=copytrelloteam@gmail.com, countUnFinishedTasks=1, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 18:20:00 - Preparing to send unfinished tasks email to 'copytrelloteam@gmail.com'. Number of tasks: 1
+2024-11-26 18:20:00 - Unfinished tasks email sent successfully to 'copytrelloteam@gmail.com'.
+2024-11-26 18:24:00 - [Producer clientId=task-tracker-scheduler-producer-1] Node -1 disconnected.
+2024-11-26 18:25:00 - Sending In progress tasks statistic
+2024-11-26 18:25:00 - StatisticDto 'StatisticDto(email=mihailrepinskie9999@icloud.com, countUnFinishedTasks=2, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.], TaskDto[title=PUL, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 18:25:00 - Preparing to send unfinished tasks email to 'mihailrepinskie9999@icloud.com'. Number of tasks: 2
+2024-11-26 18:25:00 - Unfinished tasks email sent successfully to 'mihailrepinskie9999@icloud.com'.
+2024-11-26 18:25:00 - Sending In progress tasks statistic
+2024-11-26 18:25:00 - StatisticDto 'StatisticDto(email=copytrelloteam@gmail.com, countUnFinishedTasks=1, countCompletedTasks=0, unFinishedTasks=[TaskDto[title=pull requests, description=Call with the client to review the latest progress and discuss any feedback.]], completedTasks=[])' filled successfully
+2024-11-26 18:25:00 - Preparing to send unfinished tasks email to 'copytrelloteam@gmail.com'. Number of tasks: 1
+2024-11-26 18:25:00 - Unfinished tasks email sent successfully to 'copytrelloteam@gmail.com'.
+2024-11-26 18:27:24 - [Producer clientId=task-tracker-scheduler-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2024-11-26 18:27:24 - Metrics scheduler closed
+2024-11-26 18:27:24 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-11-26 18:27:24 - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-11-26 18:27:24 - Metrics reporters closed
+2024-11-26 18:27:24 - App info kafka.producer for task-tracker-scheduler-producer-1 unregistered
+2024-11-26 18:27:24 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 18:27:24 - HikariPool-1 - Shutdown initiated...
+2024-11-26 18:27:24 - HikariPool-1 - Shutdown completed.

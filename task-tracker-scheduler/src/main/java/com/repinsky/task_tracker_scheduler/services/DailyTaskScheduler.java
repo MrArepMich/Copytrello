@@ -6,7 +6,7 @@ import com.repinsky.task_tracker_scheduler.dto.StatisticDto;
 import com.repinsky.task_tracker_scheduler.dto.TaskDto;
 import com.repinsky.task_tracker_scheduler.models.Task;
 import com.repinsky.task_tracker_scheduler.models.User;
-import com.repinsky.task_tracker_scheduler.produser.SummaryProducer;
+import com.repinsky.task_tracker_scheduler.producer.SummaryProducer;
 import com.repinsky.task_tracker_scheduler.repositories.RoleRepository;
 import com.repinsky.task_tracker_scheduler.repositories.TaskRepository;
 import com.repinsky.task_tracker_scheduler.repositories.UserRepository;
@@ -55,10 +55,13 @@ public class DailyTaskScheduler {
             }
 
             if (!completedTasks.isEmpty() && !inProgressTasks.isEmpty()) {
+                log.info("Sending Completed and In progress tasks statistic");
                 summaryProducer.sendAllTasks(fillStatisticDto(user, completedTasks, inProgressTasks));
             } else if (!completedTasks.isEmpty()) {
+                log.info("Sending Completed tasks statistic");
                 summaryProducer.sendCompletedTasks(fillStatisticDto(user, completedTasks, inProgressTasks));
             } else {
+                log.info("Sending In progress tasks statistic");
                 summaryProducer.sendUnfinishedTasks(fillStatisticDto(user, completedTasks, inProgressTasks));
             }
         }
@@ -76,6 +79,7 @@ public class DailyTaskScheduler {
         statisticDto.setCompletedTasks(completedTaskDtos);
         statisticDto.setUnFinishedTasks(unFinishedTaskDtos);
 
+        log.info("StatisticDto '{}' filled successfully" , statisticDto);
         return statisticDto;
     }
 

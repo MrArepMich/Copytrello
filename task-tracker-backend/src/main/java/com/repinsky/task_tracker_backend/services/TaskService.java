@@ -12,12 +12,14 @@ import com.repinsky.task_tracker_backend.repositories.TaskRepository;
 import com.repinsky.task_tracker_backend.repositories.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
 import java.sql.Timestamp;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class TaskService {
@@ -31,6 +33,7 @@ public class TaskService {
                 .orElseThrow(() -> new UserNotFoundException("User with email '" + ownerEmail + "' not found"));
 
         if (taskRepository.findTaskByTitleAndUserEmail(title, ownerEmail).isPresent()) {
+            log.error("User '{}' tried to create a task with an existing title '{}'", ownerEmail, title);
             throw new BadRequestException("Task with title '" + title + "' already exists");
         }
 
@@ -44,10 +47,12 @@ public class TaskService {
         TaskService proxy = applicationContext.getBean(TaskService.class);
         proxy.saveTaskToDb(newTask);
 
+        log.info("Task with title '{}' and description '{}' for user '{}' created successfully", title, description, ownerEmail);
         return "Task created successfully";
     }
 
     public List<TaskDto> getAllUserTasks(String userEmail) {
+        log.info("Tasks for user '{}' found", userEmail);
         return taskRepository.findAllByUserEmail(userEmail).orElseThrow(
                         () -> new TaskNotFoundException("Tasks for user '" + userEmail + "' not found")
                 )
@@ -64,6 +69,7 @@ public class TaskService {
         TaskService proxy = applicationContext.getBean(TaskService.class);
         proxy.deleteAllUserTasks(tasks);
 
+        log.info("Tasks for user '{}' deleted successfully", currentUserEmail);
         return "All tasks deleted successfully";
     }
 
@@ -74,6 +80,7 @@ public class TaskService {
                 () -> new TaskNotFoundException("Task with id '" + id + "' for user '" + currentUserEmail + "' does not exist")
         );
 
+        log.info("Task with id '{}' for user '{}' found", id, currentUserEmail);
         return taskConverter.entityToDto(task);
     }
 
@@ -82,6 +89,7 @@ public class TaskService {
                 () -> new TaskNotFoundException("Task with title '" + title + "' does not exist")
         );
 
+        log.info("Task with title '{}' for user '{}' found", title, currentUserEmail);
         return taskConverter.entityToDto(task);
     }
 
@@ -93,6 +101,7 @@ public class TaskService {
         TaskService proxy = applicationContext.getBean(TaskService.class);
         proxy.deleteTaskFromDb(task);
 
+        log.info("Task with id '{}' for email '{}' deleted successfully", id, currentUserEmail);
         return "Task deleted successfully";
     }
 
@@ -114,12 +123,14 @@ public class TaskService {
 
     private String updateTaskWithNewValues(String userEmail, String newTitle, String newDescription, String newStatus, Task task) {
         if (newTitle == null || newStatus == null) {
+            log.error("Title and status for new task cannot be empty");
             throw new TaskNotFoundException("Title and status for new task cannot be empty");
         }
 
         List<Task> tasks = taskRepository.findAllTasksByEmailAndTitle(userEmail, newTitle);
 
         if (!tasks.isEmpty() && !tasks.contains(task)) {
+            log.error("User '{}' tried to update a task with an already existing title '{}'", userEmail, newTitle);
             throw new BadRequestException("Task with title '" + newTitle + "' already exists");
         }
 
@@ -127,6 +138,7 @@ public class TaskService {
         try {
             taskStatus = TaskStatus.valueOf(newStatus.toUpperCase());
         } catch (IllegalArgumentException e) {
+            log.error("Invalid task status '{}'", newStatus);
             throw new BadRequestException("Invalid status: " + newStatus);
         }
 
@@ -143,6 +155,7 @@ public class TaskService {
         TaskService proxy = applicationContext.getBean(TaskService.class);
         proxy.saveTaskToDb(task);
 
+        log.info("Task with title '{}' for user '{}' updated successfully", newTitle, userEmail);
         return "Task updated successfully";
     }
 
