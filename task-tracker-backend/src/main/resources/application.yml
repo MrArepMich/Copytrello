@@ -5,7 +5,7 @@ spring:
     name: copytrello
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://task-tracker-db:5431/copytrello_db
+    url: postgresql://copytrello_db_user:xm9I5M5NpCl7LXGHiPwLq9ymXeN8AjQJ@dpg-ctmjg352ng1s73bcpoj0-a/copytrello_db
     username: copytrello
     password: copytrello2024
   jpa:
