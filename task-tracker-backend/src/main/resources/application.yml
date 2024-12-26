@@ -19,6 +19,7 @@ spring:
   flyway:
     enabled: true
 server:
-  port: 8300
+  port: ${PORT:8080}
+
   servlet:
     context-path: /copytrello
