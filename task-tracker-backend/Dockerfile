@@ -1,21 +1,38 @@
+# Стадия сборки
 FROM gradle:jdk21-alpine AS builder
 
+# Рабочая директория
 WORKDIR /app
 
-COPY build.gradle ./
+# Копируем файлы Gradle
+COPY build.gradle settings.gradle ./
 
-COPY /src ./src
+# Копируем исходный код
+COPY src ./src
 
+# Выполняем сборку без тестов
 RUN gradle clean build -x test --no-daemon
 
+# Стадия выполнения
 FROM eclipse-temurin:21-jre-alpine
-RUN adduser --system app-user
 
-COPY --from=builder --chown=app-user:app-user /app/build/libs/*.jar app.jar
+# Создаём системного пользователя с явной группой
+RUN addgroup app-user && adduser --system --no-create-home -G app-user app-user
+
+# Создаём директорию для логов
+RUN mkdir -p /logs && chown app-user:app-user /logs
+
+# Копируем собранный JAR из стадии сборки
+COPY --from=builder --chown=app-user:app-user /app/build/libs/*.jar /app/app.jar
+
+# Экспонируем порт приложения
 EXPOSE 8300
 
+# Переключаемся на системного пользователя
 USER app-user
 
-CMD ["java", "-jar", "app.jar"]
+# Команда для запуска приложения
+CMD ["java", "-jar", "/app/app.jar"]
 
+# Добавляем метаданные
 LABEL authors="Michael"
