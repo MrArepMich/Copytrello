@@ -1,0 +1,12 @@
+spring:
+
+  datasource:
+    url: jdbc:postgresql://${POSTGRESQL_CONTAINER_HOST}:${POSTGRESQL_CONTAINER_PORT}/test_db
+    username: test
+    password: test
+  flyway:
+    enabled: true
+
+logging:
+  level:
+    org.testcontainers: DEBUG
