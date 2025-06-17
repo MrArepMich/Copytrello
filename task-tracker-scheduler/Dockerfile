@@ -11,7 +11,7 @@ RUN gradle :task-tracker-scheduler:clean :task-tracker-scheduler:build -x test -
 FROM eclipse-temurin:21-jre-alpine
 RUN adduser --system app-user
 
-COPY --from=builder --chown=app-user:app-user /app/build/libs/*.jar app.jar
+COPY --from=builder --chown=app-user:app-user /app/task-tracker-scheduler/build/libs/*.jar app.jar
 EXPOSE 8080
 
 USER app-user
