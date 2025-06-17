@@ -4,14 +4,11 @@ FROM gradle:jdk21-alpine AS builder
 # Рабочая директория
 WORKDIR /app
 
-# Копируем файлы Gradle
-COPY build.gradle settings.gradle ./
+# Копируем весь проект для сборки одного модуля
+COPY . .
 
-# Копируем исходный код
-COPY src ./src
-
-# Выполняем сборку без тестов
-RUN gradle clean build -x test --no-daemon
+# Собираем только backend без тестов
+RUN gradle :task-tracker-backend:clean :task-tracker-backend:build -x test --no-daemon
 
 # Стадия выполнения
 FROM eclipse-temurin:21-jre-alpine

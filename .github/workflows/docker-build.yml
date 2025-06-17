@@ -25,17 +25,20 @@ jobs:
       - name: Build and push backend image
         uses: docker/build-push-action@v2
         with:
-          context: ./task-tracker-backend
+          context: .
+          file: ./task-tracker-backend/Dockerfile
           tags: repinskie/task-tracker-backend:latest
 
       - name: Build and push scheduler image
         uses: docker/build-push-action@v2
         with:
-          context: ./task-tracker-scheduler
+          context: .
+          file: ./task-tracker-scheduler/Dockerfile
           tags: repinskie/task-tracker-scheduler:latest
 
       - name: Build and push email-sender image
         uses: docker/build-push-action@v2
         with:
-          context: ./task-tracker-email-sender
+          context: .
+          file: ./task-tracker-email-sender/Dockerfile
           tags: repinskie/task-tracker-email-sender:latest
