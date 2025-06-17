@@ -10,10 +10,10 @@ import com.repinsky.task_tracker_backend.models.Task;
 import com.repinsky.task_tracker_backend.models.User;
 import com.repinsky.task_tracker_backend.repositories.TaskRepository;
 import com.repinsky.task_tracker_backend.repositories.UserRepository;
-import jakarta.transaction.Transactional;
+import com.repinsky.task_tracker_backend.services.TaskPersistenceService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.ApplicationContext;
+
 import java.sql.Timestamp;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -26,7 +26,7 @@ public class TaskService {
     private final TaskRepository taskRepository;
     private final TaskConverter taskConverter;
     private final UserRepository userRepository;
-    private final ApplicationContext applicationContext;
+    private final TaskPersistenceService persistenceService;
 
     public String createNewTask(String title, String description, String ownerEmail) {
         User owner = userRepository.findByEmail(ownerEmail)
@@ -44,8 +44,7 @@ public class TaskService {
                 .status(TaskStatus.IN_PROGRESS)
                 .build();
 
-        TaskService proxy = applicationContext.getBean(TaskService.class);
-        proxy.saveTaskToDb(newTask);
+        persistenceService.saveTask(newTask);
 
         log.info("Task with title '{}' and description '{}' for user '{}' created successfully", title, description, ownerEmail);
         return "Task created successfully";
@@ -66,8 +65,7 @@ public class TaskService {
                 () -> new TaskNotFoundException("Tasks for user '" + currentUserEmail + "' not found")
         );
 
-        TaskService proxy = applicationContext.getBean(TaskService.class);
-        proxy.deleteAllUserTasks(tasks);
+        persistenceService.deleteTasks(tasks);
 
         log.info("Tasks for user '{}' deleted successfully", currentUserEmail);
         return "All tasks deleted successfully";
@@ -98,8 +96,7 @@ public class TaskService {
                 () -> new TaskNotFoundException("Task with id '" + id + "' for user '" + currentUserEmail + "' does not exist")
         );
 
-        TaskService proxy = applicationContext.getBean(TaskService.class);
-        proxy.deleteTaskFromDb(task);
+        persistenceService.deleteTask(task);
 
         log.info("Task with id '{}' for email '{}' deleted successfully", id, currentUserEmail);
         return "Task deleted successfully";
@@ -152,25 +149,11 @@ public class TaskService {
             task.setCompletedAt(null);
         }
 
-        TaskService proxy = applicationContext.getBean(TaskService.class);
-        proxy.saveTaskToDb(task);
+        persistenceService.saveTask(task);
 
         log.info("Task with title '{}' for user '{}' updated successfully", newTitle, userEmail);
         return "Task updated successfully";
     }
 
-    @Transactional
-    protected void deleteTaskFromDb(Task task) {
-        taskRepository.delete(task);
-    }
-
-    @Transactional
-    protected void deleteAllUserTasks(List<Task> tasks) {
-        taskRepository.deleteAll(tasks);
-    }
-
-    @Transactional
-    protected void saveTaskToDb(Task task) {
-        taskRepository.save(task);
-    }
+    // database operations are delegated to TaskPersistenceService
 }
