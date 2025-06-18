@@ -44,7 +44,7 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<?> registerNewUser(@RequestBody RegisterUserRequest registerUserRequest) throws InputDataException {
-        log.info("Request to create new user: email -> {}, password -> {}, confirmedPassword -> {}", registerUserRequest.getEmail(), registerUserRequest.getPassword(), registerUserRequest.getConfirmPassword());
+        log.info("Request to create new user: email -> {}", registerUserRequest.getEmail());
         userService.createNewUser(registerUserRequest);
         return ResponseEntity.ok(new StringResponse("User with email '" + registerUserRequest.getEmail() + "' registered successfully"));
     }
