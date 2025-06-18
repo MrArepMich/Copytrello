@@ -34,7 +34,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
         try {
             String token = getTokenFromJwt(request);
             if (token != null) {
-                log.debug("Token found: " + token);
+                log.debug("Token found");
                 String validationError = jwtTokenUtil.validateJwtToken(token);
                 if (validationError.equals("")) {
                     String userData = jwtTokenUtil.getUserDataFromToken(token);
