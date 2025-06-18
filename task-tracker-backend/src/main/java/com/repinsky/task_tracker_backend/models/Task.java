@@ -3,8 +3,6 @@ package com.repinsky.task_tracker_backend.models;
 import com.repinsky.task_tracker_backend.constants.TaskStatus;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.Generated;
-import org.hibernate.annotations.GenerationTime;
 
 import java.sql.Timestamp;
 
@@ -40,7 +38,5 @@ public class Task {
     @Column(name = "completed_at")
     private Timestamp completedAt;
 
-    @PrePersist protected void onCreate() {
-        createdAt = new Timestamp(System.currentTimeMillis());
-    }
+    // Timestamp is set by the database default
 }

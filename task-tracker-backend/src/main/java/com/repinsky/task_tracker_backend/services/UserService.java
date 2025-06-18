@@ -24,7 +24,7 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final RoleService roleService;
-    private final InputValidationUtil validationService = new InputValidationUtil();
+    private final InputValidationUtil validationService;
     private final RegistrationProducer registrationProducer;
 
     public void createNewUser(RegisterUserRequest registerUserRequest) throws InputDataException {

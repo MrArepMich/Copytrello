@@ -38,7 +38,5 @@ public class Task {
     @Column(name = "completed_at")
     private Timestamp completedAt;
 
-    @PrePersist protected void onCreate() {
-        createdAt = new Timestamp(System.currentTimeMillis());
-    }
+    // Timestamp is set by the database default
 }
