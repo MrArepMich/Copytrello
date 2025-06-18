@@ -6,6 +6,9 @@ import org.apache.commons.validator.routines.EmailValidator;
 
 import static com.repinsky.task_tracker_backend.constants.InfoMessage.*;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class InputValidationUtil {
     private static final Pattern EMAIL_ALLOWED_PATTERN = Pattern.compile("^[A-Za-z0-9@._-]+$");
     private static final Pattern PASSWORD_ALLOWED_PATTERN = Pattern.compile("^[A-Za-z0-9]+$");
