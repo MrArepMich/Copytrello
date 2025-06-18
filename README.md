@@ -33,7 +33,7 @@ Copytrello is a multi-user task planner that provides user registration and auth
 
 3. Ensure that Docker is installed.
 
-4. In the root of the project, copy `.env.example` to `.env` and configure the database credentials and Mailjet API keys:
+4. In the root of the project, copy `.env.example` to `.env` and configure the database credentials, JWT secret, and Mailjet API keys:
 
     ```plaintext
     POSTGRES_USER=yourPostgresUser
@@ -45,10 +45,14 @@ Copytrello is a multi-user task planner that provides user registration and auth
     DB_USERNAME=yourPostgresUser
     DB_PASSWORD=yourPostgresPassword
 
+    # JWT configuration (used by `application-jwt.yml`)
     JWT_SECRET_KEY=yourJwtSecretKey
     MAILjET_API_KEY=yourMailjetApiKey
     MAILjET_SECRET_KEY=yourMailjetSecretKey
     ```
+
+    The backend service now reads JWT settings from `src/main/resources/application-jwt.yml`,
+    so be sure to provide a strong value for `JWT_SECRET_KEY`.
 
     To obtain Mailjet keys, register on the official [Mailjet website](https://www.mailjet.com/). Go to the API section and generate a SECRET KEY. Also, in the email-sender configuration file, replace the email address with the one you registered with Mailjet.
 
