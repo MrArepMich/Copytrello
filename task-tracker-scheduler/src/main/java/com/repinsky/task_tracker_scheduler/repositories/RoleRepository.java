@@ -10,7 +10,7 @@ import java.util.Collection;
 
 
 @Repository
-public interface RoleRepository extends JpaRepository<Role, Integer> {
+public interface RoleRepository extends JpaRepository<Role, Long> {
     @Query("select r from Role r join r.users u where u.id = :userId")
     Collection<Role> findRolesByUserId(@Param("userId") Long userId);
 }
